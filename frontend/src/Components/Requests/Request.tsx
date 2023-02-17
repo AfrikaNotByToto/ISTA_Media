@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import OnlineForm from '../OnlineForm/OnlineForm';
-import Inputes from './Inputes';
 import OnlineFormList from './OnlineFormList';
 
 function Request(): JSX.Element {
+  const [dataValue, setdataValue] = useState(() => new Date());
   return (
-    <>
-      <OnlineForm />
-      <OnlineFormList />
-      <Inputes />
-    </>
+    <div className="container">
+      <center>
+        <OnlineForm dataValue={dataValue} setdataValue={setdataValue} />
+        <br />
+        <br />
+        <OnlineFormList dataValue={dataValue} />
+      </center>
+    </div>
   );
 }
 
