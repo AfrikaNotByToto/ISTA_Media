@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState, useAppDispatch } from '../../store';
 import Inputes from './Inputes';
+import { initReqs } from './ReqSlice';
 
 function OnlineFormList({ dataValue }: { dataValue: Date }): JSX.Element {
   const [form, stateForm] = useState('');
+
+  const state = useSelector((store: RootState) => store.requests.requests);
+  // eslint-disable-next-line no-console
+  console.log('req', state);
+  const dispatch = useAppDispatch();
+  useEffect((): void => {
+    dispatch(initReqs());
+  }, [dispatch]);
 
   return (
     <>

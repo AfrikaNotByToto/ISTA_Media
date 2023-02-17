@@ -4,25 +4,20 @@ import * as api from '../../App/api';
 import { State } from './Types/types';
 
 const initialState: State = {
-  posts: [],
-  error: undefined,
+  requests: [],
 };
 
-export const initPosts = createAsyncThunk('posts/load', () => api.loadPosts());
+export const initReqs = createAsyncThunk('requests/init', () => api.loadReq());
 
-const postsSlice = createSlice({
-  name: 'post',
+const reqsSlice = createSlice({
+  name: 'request',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder
-      .addCase(initPosts.fulfilled, (state, action) => {
-        state.posts = action.payload;
-      })
-      .addCase(initPosts.rejected, (state, action) => {
-        state.error = action.error.message;
-      });
+    builder.addCase(initReqs.fulfilled, (state, action) => {
+      state.requests = action.payload;
+    });
   },
 });
 
-export default postsSlice.reducer;
+export default reqsSlice.reducer;
