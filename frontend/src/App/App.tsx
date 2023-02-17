@@ -4,6 +4,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from '../Components/NavBar/NavBar';
 import MainPage from '../Components/Main/MainPage';
+import Request from '../Components/Requests/Request';
 
 function App(): JSX.Element {
   return (
@@ -15,6 +16,7 @@ function App(): JSX.Element {
           {/* <Route path="/news" element={<NewsPage />} /> */}
         </Route>
       </Routes>
+      <Request />
     </div>
   );
 }
