@@ -14,13 +14,22 @@ export default function NavBar(): JSX.Element {
             <NavLink className="text-xl text-white" to="/">
               <img src="/img/2023-02-16 16.27.36.jpg" style={{ height: '30px' }} alt="" />
             </NavLink>
-            {!user ? (
-              <div
-                className="flex space-evenly "
-                style={{ width: '25%', justifyContent: 'space-between' }}
-              >
-                <div>Admin Panel</div>
-              </div>
+            {user ? (
+              <>
+                <NavLink className="text-xl text-white" to="/adminPage">
+                  <img
+                    src="/img/2023-02-16 16.27.36.jpg"
+                    style={{ height: '30px' }}
+                    alt=""
+                  />
+                </NavLink>
+                <div
+                  className="flex space-evenly "
+                  style={{ width: '25%', justifyContent: 'space-between' }}
+                >
+                  <div>Admin Panel</div>
+                </div>
+              </>
             ) : (
               <div
                 className="flex space-evenly "
