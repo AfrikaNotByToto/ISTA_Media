@@ -39,7 +39,7 @@ function OnlineFormList({ dataValue }: { dataValue: Date }): JSX.Element {
           16:00
         </button>
       </div>
-      {form && <Inputes dataValue={dataValue} form={form}/>}
+      {form && <Inputes dataValue={dataValue} form={form} />}
     </>
   );
 }

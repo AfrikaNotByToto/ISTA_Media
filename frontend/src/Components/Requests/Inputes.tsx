@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
+import * as api from '../../App/api';
 
 function Inputes({ dataValue, form }: { dataValue: Date; form: string }): JSX.Element {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+  const [comment, setComment] = useState('');
 
-  const dateRequest = `${dataValue.getDate()}.${dataValue.getMonth()}.${dataValue.getFullYear()}-${form}`;
+  const data = `${dataValue.getDate()}.${dataValue.getMonth()}.${dataValue.getFullYear()}-${form}`;
 
-  const InputValues = { name, phone, email, dateRequest };
+  const InputValues = { name, email, phone, data, comment };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {};
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    api.addReq(InputValues);
+  };
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="grid gap-6 mb-6 md:grid-cols-5">
         <div>
           <label
@@ -59,6 +64,22 @@ function Inputes({ dataValue, form }: { dataValue: Date; form: string }): JSX.El
             id="email"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Укажите ваш email"
+            required
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="comment"
+            className="block mb-2 text-sm font-medium text-white dark:text-white"
+          >
+            Комментарий
+          </label>
+          <input
+            onChange={(e) => setComment(e.target.value)}
+            type="text"
+            id="comment"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Оставьте ваш комментарий"
             required
           />
         </div>
