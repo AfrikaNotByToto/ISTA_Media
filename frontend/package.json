@@ -12,9 +12,11 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/redux-devtools-extension": "^2.13.2",
+    "date-fns": "2.19.0",
     "i": "^0.3.7",
     "npm": "^9.5.0",
     "react": "^18.2.0",
+    "react-date-range": "^1.4.0",
     "react-datepicker": "^4.10.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -95,6 +97,9 @@
     ]
   },
   "devDependencies": {
+
+    "@types/react-date-range": "^1.4.4",
+
     "@types/react-datepicker": "^4.8.0",
     "eslint": "^8.34.0",
     "eslint-config-airbnb": "^19.0.4",

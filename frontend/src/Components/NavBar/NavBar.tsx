@@ -4,9 +4,10 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 export default function NavBar(): JSX.Element {
   const user = {
-    id: 1,
+    idi: 1,
   };
   return (
+
     <nav className="flex flex-col justify-center items-center py-3 bg-black text-white shadow-lg navbar navbar-expand-lg navbar-light">
       <div className="container-fluid w-full flex flex-wrap items-center justify-between px-6">
         <div className="flex-1 flex justify-between mr-auto">
@@ -36,9 +37,10 @@ export default function NavBar(): JSX.Element {
               </NavLink>
             </div>
           )}
+
         </div>
-      </div>
+      </nav>
       <Outlet />
-    </nav>
+    </>
   );
 }
