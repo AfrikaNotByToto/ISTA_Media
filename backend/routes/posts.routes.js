@@ -3,7 +3,7 @@ const { Post } = require("../db/models");
 
 router.get("/", async (req, res) => {
   try {
-    const Posts = await Post.findAll();
+    const Posts = await Post.findAll({ raw: true });
     res.status(200).json(Posts);
   } catch ({ message }) {
     res.status(500).json(message);

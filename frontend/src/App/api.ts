@@ -1,12 +1,13 @@
-import { Post, PostId } from '../features/Posts/Types/types';
+import { Post, PostId } from '../Components/Posts/Types/types';
 
 export const loadPosts = async (): Promise<Post[]> => {
-  const res = await fetch('http://localhost:4000/api/Posts');
-  return res.json();
+  const res = await fetch('http://localhost:4000/api/posts');
+  const data = await res.json();
+  return data;
 };
 
 export const addPost = async (newPost: Post): Promise<Post> => {
-  const res = await fetch('http://localhost:4000/api/Posts', {
+  const res = await fetch('http://localhost:4000/api/posts', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -21,23 +22,23 @@ export const addPost = async (newPost: Post): Promise<Post> => {
 };
 
 export const delPost = async (id: PostId): Promise<Post> => {
-  const res = await fetch(`http://localhost:4000/api/Posts/${id}`, {
+  const res = await fetch(`http://localhost:4000/api/posts/${id}`, {
     method: 'DELETE',
   });
   return res.json();
 };
 
-export const updatePost = async (Post: Post): Promise<Post> => {
-  const res = await fetch(`http://localhost:4000/api/Posts/${Post.id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      img: Post.img,
-      title: Post.title,
-      description: Post.description,
-    }),
-  });
-  return res.json();
-};
+// export const updatePost = async (Post: Post): Promise<Post> => {
+//   const res = await fetch(`http://localhost:4000/api/Posts/${Post.id}`, {
+//     method: 'PUT',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({
+//       img: Post.img,
+//       title: Post.title,
+//       description: Post.description,
+//     }),
+//   });
+//   return res.json();
+// };

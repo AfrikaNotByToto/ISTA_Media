@@ -7,5 +7,6 @@ export type Post = {
 };
 export type State = {
   posts: Post[];
+  error: undefined | string;
 };
 export type PostId = Post['id'];

@@ -13,7 +13,7 @@ export default function NavBar(): JSX.Element {
           <NavLink className="text-xl text-white" to="/">
             <img src="/img/2023-02-16 16.27.36.jpg" style={{ height: '30px' }} alt="" />
           </NavLink>
-          {'id' in user ? (
+          {!user ? (
             <div
               className="flex space-evenly "
               style={{ width: '25%', justifyContent: 'space-between' }}
