@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import Requests from './Requests';
+import Request from '../Requests/Request';
 
 export default function MainPage(): JSX.Element {
   const [modal, setModal] = useState(false);
@@ -49,7 +50,17 @@ export default function MainPage(): JSX.Element {
           Добавить кейс
         </button>
       </div>
-      {!modal && <Requests />}
+      {!modal && (
+        <div>
+          <div>
+            {' '}
+            <Request />
+            <div>
+              <Requests />
+            </div>
+          </div>
+        </div>
+      )}
       {modal && (
         <div
           className="container mx-auto"
