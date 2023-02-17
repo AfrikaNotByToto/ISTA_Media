@@ -1,7 +1,13 @@
 import React from 'react';
-import { Post } from './Types/types';
+import { useAppDispatch } from '../../store';
+import { deletePosts } from '../Posts/PostSlice';
+import { Post } from '../Posts/Types/types';
 
-function PostCard({ post }: { post: Post }): JSX.Element {
+function SoloPost({ post }: { post: Post }): JSX.Element {
+  const dispatch = useAppDispatch();
+  const del = (): void => {
+    dispatch(deletePosts(post.id));
+  };
   return (
     <div className="carousel-item">
       <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -18,9 +24,24 @@ function PostCard({ post }: { post: Post }): JSX.Element {
             {post.description}
           </p>
         </div>
+        <div className="inline-flex">
+          <button
+            onClick={del}
+            type="button"
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+          >
+            Delete
+          </button>
+          <button
+            type="button"
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+          >
+            Update
+          </button>
+        </div>
       </div>
     </div>
   );
 }
 
-export default PostCard;
+export default SoloPost;
