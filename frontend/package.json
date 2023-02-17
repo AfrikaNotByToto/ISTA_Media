@@ -97,7 +97,9 @@
     ]
   },
   "devDependencies": {
+
     "@types/react-date-range": "^1.4.4",
+
     "@types/react-datepicker": "^4.8.0",
     "eslint": "^8.34.0",
     "eslint-config-airbnb": "^19.0.4",
