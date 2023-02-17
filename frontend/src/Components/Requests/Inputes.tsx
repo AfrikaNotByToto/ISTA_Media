@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Inputes(): JSX.Element {
-//   const [name, setName] = useState('');
-//   const [phone, setPhone] = useState('');
-//   const [email, setEmail] = useState('');
-//   const form = { name, phone, email };
+function Inputes({ dataValue, form }: { dataValue: Date; form: string }): JSX.Element {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
 
-//   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {};
+  const dateRequest = `${dataValue.getDate()}.${dataValue.getMonth()}.${dataValue.getFullYear()}-${form}`;
+
+  const InputValues = { name, phone, email, dateRequest };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {};
   return (
     <form>
       <div className="grid gap-6 mb-6 md:grid-cols-5">
@@ -18,7 +21,7 @@ function Inputes(): JSX.Element {
             Ваше имя
           </label>
           <input
-            // onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
             type="text"
             id="first_name"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -34,7 +37,7 @@ function Inputes(): JSX.Element {
             Номер телефона
           </label>
           <input
-            // onChange={(e) => setPhone(e.target.value)}
+            onChange={(e) => setPhone(e.target.value)}
             type="tel"
             id="phone"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -51,7 +54,7 @@ function Inputes(): JSX.Element {
             Email
           </label>
           <input
-            // onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             type="text"
             id="email"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
