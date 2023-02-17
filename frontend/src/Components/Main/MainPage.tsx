@@ -1,10 +1,28 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
+
 import Requests from './Requests';
 import Request from '../Requests/Request';
+import { useAppDispatch } from '../../store';
+import { addPosts } from '../Posts/PostSlice';
 
 export default function MainPage(): JSX.Element {
   const [modal, setModal] = useState(false);
+  const [img, setImg] = useState('');
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const dispatch = useAppDispatch();
+  const addPost = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    dispatch(addPosts({ img, title, description }));
+    setTitle('');
+    setDescription('');
+    setImg('');
+  };
+
+  const addImg = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setImg(e.target.value);
+  };
   const user = {
     id: 1,
   };
@@ -71,7 +89,7 @@ export default function MainPage(): JSX.Element {
             width: 'auto',
           }}
         >
-          <form className="bg-pink-400" style={{ zIndex: 1 }}>
+          <form className="bg-pink-400" style={{ zIndex: 1 }} onSubmit={addPost}>
             <div className="mb-6">
               <label
                 htmlFor="img"
@@ -85,7 +103,8 @@ export default function MainPage(): JSX.Element {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Вставьте ссылку на картинку"
                 name="img"
-                required
+                onChange={addImg}
+                value={img}
               />
             </div>
             <div className="mb-6">
@@ -101,7 +120,8 @@ export default function MainPage(): JSX.Element {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Заголовок"
                 name="title"
-                required
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}
               />
             </div>
             <div className="mb-6">
@@ -117,7 +137,8 @@ export default function MainPage(): JSX.Element {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Описание"
                 name="description"
-                required
+                onChange={(e) => setDescription(e.target.value)}
+                value={description}
               />
             </div>
             <button

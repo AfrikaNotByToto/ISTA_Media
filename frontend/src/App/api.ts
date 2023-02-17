@@ -21,7 +21,7 @@ export const addPost = async (newPost: Post): Promise<Post> => {
   return res.json();
 };
 
-export const delPost = async (id: PostId): Promise<Post> => {
+export const delPost = async (id: PostId): Promise<PostId> => {
   const res = await fetch(`http://localhost:4000/api/posts/${id}`, {
     method: 'DELETE',
   });

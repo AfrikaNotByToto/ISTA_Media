@@ -16,9 +16,11 @@ function PostPage(): JSX.Element {
     <div>
       {state ? (
         <div>
-          {state.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
+          <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
+            {state.map((post) => (
+              <PostCard key={post.id} post={post} />
+            ))}
+          </div>
         </div>
       ) : (
         <>

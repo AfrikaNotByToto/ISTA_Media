@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import * as api from '../../App/api';
-import { State } from './Types/types';
+import { State, Post, PostId } from './Types/types';
 
 const initialState: State = {
   posts: [],
@@ -9,6 +9,12 @@ const initialState: State = {
 };
 
 export const initPosts = createAsyncThunk('posts/load', () => api.loadPosts());
+export const addPosts = createAsyncThunk('posts/add', (newPost: Post) =>
+  api.addPost(newPost)
+);
+export const deletePosts = createAsyncThunk('posts/delete', (id: PostId) =>
+  api.delPost(id)
+);
 
 const postsSlice = createSlice({
   name: 'post',
@@ -20,6 +26,21 @@ const postsSlice = createSlice({
         state.posts = action.payload;
       })
       .addCase(initPosts.rejected, (state, action) => {
+        state.error = action.error.message;
+      })
+      .addCase(addPosts.fulfilled, (state, action) => {
+        state.posts.push(action.payload);
+      })
+      .addCase(addPosts.rejected, (state, action) => {
+        state.error = action.error.message;
+      })
+      .addCase(deletePosts.fulfilled, (state, action) => {
+        const arr = state.posts.filter((post) => post.id !== action.payload);
+        state.posts = arr;
+        console.log(state.posts);
+      })
+
+      .addCase(deletePosts.rejected, (state, action) => {
         state.error = action.error.message;
       });
   },
