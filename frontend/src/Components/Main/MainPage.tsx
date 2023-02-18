@@ -13,25 +13,26 @@ export default function MainPage(): JSX.Element {
       {user && (
         <div className="container" style={{ position: 'relative' }}>
           <img
+            className="bg-contain bg-center"
             src="https://99px.ru/sstorage/53/2013/04/tmb_68339_3636.jpg"
             alt=""
             style={{
-              height: '100%',
-              width: '100%',
+              height: '200vh',
+              width: '400vw',
             }}
           />
           <h1
             className="h11"
             style={{
               position: 'absolute',
-              top: '40%',
-              left: '10%',
+              top: '15%',
+              left: '5%',
               color: 'whitesmoke',
-              fontSize: '50px',
+              fontSize: '60px',
               fontWeight: 'bolder',
             }}
           >
-            Сделаем ваш бизнес узнаваемым
+            Ваши клиенты вас найдут
           </h1>
           <h5
             style={{
