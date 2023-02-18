@@ -1,9 +1,9 @@
 export type Post = {
-  id: number;
+  id?: number | undefined;
   img: string;
   title: string;
   description: string;
-  userId: number;
+  userId?: number;
 };
 export type State = {
   posts: Post[];

@@ -1,7 +1,7 @@
-const router = require("express").Router();
-const { Post } = require("../db/models");
+const router = require('express').Router();
+const { Post } = require('../db/models');
 
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const Posts = await Post.findAll({ raw: true });
     res.status(200).json(Posts);
@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const Post = await Post.findOne({ where: { id } });
@@ -20,34 +20,35 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { img, title, description } = req.body;
-    if (img && title && description) {
-      const Post = await Post.create({
-        img,
-        title,
-        description,
-        userId: req.session.userId,
-      });
-      res.json(Post);
-    }
+    console.log(req.body);
+    const Posts = await Post.create({
+      img,
+      title,
+      description,
+      // userId: req.session.userId,
+    });
+    res.json(Posts);
+    console.log(Posts);
   } catch ({ message }) {
     res.status(500).json(message);
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const result = await Post.destroy({ where: { id } });
-    res.json(result);
+    console.log(id);
+    res.json(Number(id));
   } catch ({ message }) {
     res.status(500).json(message);
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { img, title, description } = req.body;
