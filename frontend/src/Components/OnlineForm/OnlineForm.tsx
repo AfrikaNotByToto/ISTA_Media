@@ -12,7 +12,7 @@ function OnlineForm({
 }): JSX.Element {
   const handleSelect = (date: Date): void => {
     // eslint-disable-next-line no-console
-    console.log(date);
+    console.log(date.toDateString());
     setdataValue(date);
   };
 

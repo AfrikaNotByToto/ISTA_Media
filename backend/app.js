@@ -6,6 +6,7 @@ const config = require('./config/config');
 
 const apiAuthRoute = require('./routes/auth.routes');
 const apiPostRoute = require('./routes/posts.routes');
+const apiReqRoute = require('./routes/req.routes');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -14,6 +15,7 @@ config(app);
 
 app.use('/api/auth', apiAuthRoute);
 app.use('/api/posts', apiPostRoute);
+app.use('/api/requests', apiReqRoute);
 
 const start = async () => {
   try {
