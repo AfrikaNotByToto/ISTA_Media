@@ -1,11 +1,11 @@
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class News extends Model {
+  class New extends Model {
     static associate({ User }) {
       this.belongsTo(User, { foreignKey: "userId" });
     }
   }
-  News.init(
+  New.init(
     {
       img: {
         allowNull: false,
@@ -33,8 +33,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "News",
+      modelName: "New",
     }
   );
-  return News;
+  return New;
 };
