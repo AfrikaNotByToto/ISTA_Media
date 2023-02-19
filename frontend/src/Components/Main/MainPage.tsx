@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-import Requests from './Requests';
-import Request from '../Requests/Request';
+// import Requests from './Requests';
+// import Request from '../Requests/Request';
 
 export default function MainPage(): JSX.Element {
   return (
@@ -10,7 +10,7 @@ export default function MainPage(): JSX.Element {
       <div className="container" style={{ position: 'relative' }}>
         <img
           className="bg-contain bg-center"
-          src="https://99px.ru/sstorage/53/2013/04/tmb_68339_3636.jpg"
+          src="https://images.squarespace-cdn.com/content/v1/5d0ade01fc40e30001b4a6c5/1611179474887-THCHA3NFBUUQD9DGLOSV/bw+spiral+gif.gif"
           alt=""
           style={{
             height: '100%',
@@ -62,15 +62,15 @@ export default function MainPage(): JSX.Element {
           width: 'auto',
         }}
       />
-      <div>
+      {/* <div>
         <div>
           {' '}
-          <Request />
-          <div>
+          <Request /> */}
+      {/* <div>
             <Requests />
-          </div>
-        </div>
-      </div>
+          </div> */}
+      {/* </div>
+      </div> */}
     </>
   );
 }
