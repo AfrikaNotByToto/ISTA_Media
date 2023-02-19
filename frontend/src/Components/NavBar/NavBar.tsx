@@ -1,11 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { NavLink, Outlet } from 'react-router-dom';
+import { RootState } from '../../store';
 
 export default function NavBar(): JSX.Element {
-  const user = {
-    idi: 1,
-  };
+  const { user } = useSelector((store: RootState) => store.users);
   return (
     <>
       <nav className="flex flex-col justify-center items-center py-3 bg-black text-white shadow-lg navbar navbar-expand-lg navbar-light">
@@ -14,7 +14,7 @@ export default function NavBar(): JSX.Element {
             <NavLink className="text-xl text-white" to="/">
               <img src="/img/2023-02-16 16.27.36.jpg" style={{ height: '30px' }} alt="" />
             </NavLink>
-            {user ? (
+            {'userName' in user ? (
               <>
                 <NavLink className="text-xl text-white" to="/adminPage">
                   <img
@@ -28,6 +28,9 @@ export default function NavBar(): JSX.Element {
                   style={{ width: '25%', justifyContent: 'space-between' }}
                 >
                   <div>Admin Panel</div>
+                  <NavLink className="text-xl text-white" to="/registration">
+                    <div>Регистрация</div>
+                  </NavLink>
                 </div>
               </>
             ) : (
