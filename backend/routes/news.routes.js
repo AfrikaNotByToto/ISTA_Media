@@ -1,7 +1,7 @@
-const router = require("express").Router();
-const { New } = require("../db/models");
+const router = require('express').Router();
+const { New } = require('../db/models');
 
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const News = await New.findAll({ raw: true });
     res.status(200).json(News);
@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const oneNew = await New.findOne({ where: { id } });
@@ -20,7 +20,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { img, title, description, url } = req.body;
     console.log(req.body);
@@ -38,7 +38,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const result = await New.destroy({ where: { id } });
@@ -49,7 +49,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { img, title, description, url } = req.body;
