@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import NavBar from '../Components/NavBar/NavBar';
 
 import PostPage from '../Components/Posts/PostPage';
-
+import NewsPage from '../Components/News/NewsPage';
 import MainPage from '../Components/Main/MainPage';
 import AdminPage from '../Components/Admin/AdminPage';
 
@@ -18,7 +18,7 @@ function App(): JSX.Element {
           <Route path="/cases" element={<PostPage />} />
           <Route index element={<MainPage />} />
           <Route path="/adminPage" element={<AdminPage />} />
-          {/* <Route path="/news" element={<NewsPage />} /> */}
+          <Route path="/news" element={<NewsPage />} />
         </Route>
       </Routes>
     </div>
