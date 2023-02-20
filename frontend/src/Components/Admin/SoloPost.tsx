@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAppDispatch } from '../../store';
 import { deletePosts } from '../Posts/PostSlice';
 import { Post } from '../Posts/Types/types';
+import UpdatedPost from './UpdatePost';
 
 function SoloPost({ post }: { post: Post }): JSX.Element {
+  const [modal, setModal] = useState(false);
+  const open = (): void => {
+    setModal((prev) => !prev);
+  };
   const dispatch = useAppDispatch();
   const del = (): void => {
     dispatch(deletePosts(post.id));
@@ -33,6 +38,7 @@ function SoloPost({ post }: { post: Post }): JSX.Element {
             Delete
           </button>
           <button
+            onClick={open}
             type="button"
             className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
           >
@@ -40,6 +46,7 @@ function SoloPost({ post }: { post: Post }): JSX.Element {
           </button>
         </div>
       </div>
+      {modal && <UpdatedPost open={open} post={post} />}
     </div>
   );
 }

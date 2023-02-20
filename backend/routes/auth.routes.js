@@ -15,11 +15,9 @@ router.get('/check', async (req, res) => {
         },
         raw: true,
       });
-      console.log(req.session.userId);
-      console.log(user, 'gerge');
       res.json({ user });
     } else {
-      res.status(500).json({ message: 'Server errors' });
+      res.status(500).json({ message: '' });
     }
   } catch (message) {
     res.status(500).json({ message: 'Server error' });
