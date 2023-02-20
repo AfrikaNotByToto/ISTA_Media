@@ -36,7 +36,7 @@ export default function NavBar(): JSX.Element {
                   <NavLink className="text-xl text-white" to="/registration">
                     <div>Регистрация</div>
                   </NavLink>
-                  <NavLink className="text-xl text-white" to="/">
+                  <NavLink className="text-xl text-white" to="/admin">
                     <div onClick={vixod}>Выйти</div>
                   </NavLink>
                 </div>
