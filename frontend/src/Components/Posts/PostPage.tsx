@@ -15,13 +15,15 @@ function PostPage(): JSX.Element {
   return (
     <div>
       {state ? (
-        <div>
-          <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
-            {state.map((post) => (
-              <PostCard key={post.id} post={post} />
-            ))}
+        <center>
+          <div style={{ marginLeft: '15rem', marginTop: '20rem' }}>
+            <div className="carousel carousel-center max-w-full p-4 space-x-4 bg-black rounded-box">
+              {state.map((post) => (
+                <PostCard key={post.id} post={post} />
+              ))}
+            </div>
           </div>
-        </div>
+        </center>
       ) : (
         <>
           <div>YOU OBOSRALSIA</div>
