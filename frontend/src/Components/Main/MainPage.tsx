@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import CallBackForm from '../CallBackFom/CallBackForm';
+import Footer from '../Footer/Footer';
 import Modal from '../Modal/Modal';
 
 // import Requests from './Requests';
@@ -70,6 +71,7 @@ export default function MainPage(): JSX.Element {
         }}
       />
       <CallBackForm />
+      <Footer />
     </>
   );
 }
