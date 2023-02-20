@@ -1,35 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 // import { useParams } from 'react-router-dom';
 import { RootState, useAppDispatch } from '../../store';
 import { initPosts } from './PostSlice';
-import PostCard from './PostCard';
+import TryPost from './tryPost';
 
 function PostPage(): JSX.Element {
   // const { postId } = useParams();
+  const [modal, setModal] = useState(true);
   const state = useSelector((store: RootState) => store.posts.posts);
   const dispatch = useAppDispatch();
-  useEffect((): void => {
-    dispatch(initPosts());
+  useLayoutEffect((): void => {
+    dispatch(initPosts()).finally(() => setModal(false));
   }, [dispatch]);
   return (
     <div>
-      {state ? (
-        <center>
-          <div style={{ marginLeft: '15rem', marginTop: '20rem' }}>
-            <div className="carousel carousel-center max-w-full p-4 space-x-4 bg-black rounded-box">
-              {state.map((post) => (
-                <PostCard key={post.id} post={post} />
-              ))}
-            </div>
-          </div>
-        </center>
-      ) : (
-        <>
-          <div>YOU OBOSRALSIA</div>
-          <div>{state}</div>
-        </>
-      )}
+      {modal ? (<div style={{ width: '1000px', height: '1000px' }}> Загрузка</div>) : (
+        <TryPost state={state} />
     </div>
   );
 }
