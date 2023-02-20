@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
       img,
       title,
       description,
-      // userId: req.session.userId,
+      userId: req.session.userId,
     });
     res.json(Posts);
     console.log(Posts);
@@ -41,7 +41,6 @@ router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const result = await Post.destroy({ where: { id } });
-    console.log(id);
     res.json(Number(id));
   } catch ({ message }) {
     res.status(500).json(message);
@@ -51,17 +50,17 @@ router.delete('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const { img, title, description } = req.body;
-    if (img && title && description) {
-      const Post = await Post.findOne({ where: { id: Number(id) } });
-      Post.img = img;
-      Post.title = title;
-      Post.description = description;
-      Post.save();
-      res.json(Post);
-    }
-  } catch ({ message }) {
-    res.status(500).json(message);
+    const { description, img, title } = req.body;
+    // const posts = await Post.findOne({
+    //   where: { id, userId: req.session.userId },
+    // });
+    // if (posts.userId === req.session.userId) {
+    await Post.update({ description, img, title }, { where: { id } });
+    const data = await Post.findOne({ where: { id } });
+    res.json(data);
+    // }
+  } catch (message) {
+    res.status(500).json({ message: 'Crushed' });
   }
 });
 

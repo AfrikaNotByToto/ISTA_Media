@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAppDispatch } from '../../store';
 import { deletePosts } from '../Posts/PostSlice';
 import { Post } from '../Posts/Types/types';
+import UpdatedPost from './UpdatePost';
 
 function SoloPost({ post }: { post: Post }): JSX.Element {
+  const [modal, setModal] = useState(false);
+  const open = (): void => {
+    setModal((prev) => !prev);
+  };
   const dispatch = useAppDispatch();
   const del = (): void => {
     dispatch(deletePosts(post.id));
@@ -24,22 +29,24 @@ function SoloPost({ post }: { post: Post }): JSX.Element {
             {post.description}
           </p>
         </div>
-        <div className="inline-flex">
+        <div className="flex-col">
           <button
             onClick={del}
             type="button"
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold rounded resize-y"
           >
             Delete
           </button>
           <button
+            onClick={open}
             type="button"
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold rounded wd-40 h-5"
           >
             Update
           </button>
         </div>
       </div>
+      {modal && <UpdatedPost open={open} post={post} />}
     </div>
   );
 }

@@ -31,12 +31,13 @@ export const delPost = async (id: PostId): Promise<PostId> => {
 };
 
 export const updatePost = async (post: Post): Promise<Post> => {
-  const res = await fetch(`http://localhost:4000/api/Posts/${post.id}`, {
+  const res = await fetch(`http://localhost:4000/api/posts/${post.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
+      id: post.id,
       img: post.img,
       title: post.title,
       description: post.description,

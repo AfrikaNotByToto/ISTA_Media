@@ -15,7 +15,9 @@ export const addPosts = createAsyncThunk('posts/add', (newPost: Post) =>
 export const deletePosts = createAsyncThunk('posts/delete', (id: PostId) =>
   api.delPost(id)
 );
-
+export const updateDPost = createAsyncThunk('posts/update', (post: Post) =>
+  api.updatePost(post)
+);
 const postsSlice = createSlice({
   name: 'post',
   initialState,
@@ -37,10 +39,17 @@ const postsSlice = createSlice({
       .addCase(deletePosts.fulfilled, (state, action) => {
         const arr = state.posts.filter((post) => post.id !== action.payload);
         state.posts = arr;
-        console.log(state.posts);
       })
 
       .addCase(deletePosts.rejected, (state, action) => {
+        state.error = action.error.message;
+      })
+      .addCase(updateDPost.fulfilled, (state, action) => {
+        state.posts = state.posts.map((post) =>
+          post.id === action.payload.id ? action.payload : post
+        );
+      })
+      .addCase(updateDPost.rejected, (state, action) => {
         state.error = action.error.message;
       });
   },

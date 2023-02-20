@@ -4,6 +4,7 @@ import newsSlice from './Components/News/NewsSlice';
 import postSlice from './Components/Posts/PostSlice';
 import reqsSlice from './Components/Requests/ReqSlice';
 import userSlice from './Components/auth/authRegSlice';
+import descriptionSlicer from './Components/AboutUs/descriptionSlicer';
 
 const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ const store = configureStore({
     requests: reqsSlice,
     news: newsSlice,
     users: userSlice,
+    descriptions: descriptionSlicer,
     },
 });
 export type AppDispatch = typeof store.dispatch;
