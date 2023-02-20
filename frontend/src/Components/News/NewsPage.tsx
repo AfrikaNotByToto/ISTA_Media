@@ -1,32 +1,22 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 // import { useParams } from 'react-router-dom';
 import { RootState, useAppDispatch } from '../../store';
 import { initNews } from './NewsSlice';
-import NewsCard from './NewsCard';
+import TryNews from './tryNews';
 
 function NewsPage(): JSX.Element {
   // const { postId } = useParams();
+  const [loading, setLoading] = useState(true);
   const state = useSelector((store: RootState) => store.news.news);
   const dispatch = useAppDispatch();
   useLayoutEffect((): void => {
-    dispatch(initNews());
+    dispatch(initNews()).finally(() => setLoading(false));
   }, [dispatch]);
   return (
     <div>
-      {state ? (
-        <div>
-          <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
-            {state.map((oneNews) => (
-              <NewsCard key={oneNews.id} oneNews={oneNews} />
-            ))}
-          </div>
-        </div>
-      ) : (
-        <>
-          <div>YOU OBOSRALSIA</div>
-          <div>{state}</div>
-        </>
+      {loading ? (<div>Загрузка</div>) : (
+        <TryNews state={state} />
       )}
     </div>
   );
