@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Post } = require('../db/models');
+const { Description } = require('../db/models');
 
 router.get('/', async (req, res) => {
   try {
-    const Posts = await Post.findAll({ raw: true });
-    res.status(200).json(Posts);
+    const Descriptions = await Description.findAll({ raw: true });
+    res.status(200).json(Descriptions);
   } catch ({ message }) {
     res.status(500).json(message);
   }
@@ -13,8 +13,8 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const Post = await Post.findOne({ where: { id } });
-    res.json(Post);
+    const oneDescription = await Description.findOne({ where: { id } });
+    res.json(oneDescription);
   } catch ({ message }) {
     res.status(500).json(message);
   }
@@ -22,16 +22,14 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { img, title, description } = req.body;
+    const { img, body } = req.body;
     console.log(req.body);
-    const Posts = await Post.create({
+    const newDescription = await Decription.create({
       img,
-      title,
-      description,
-      userId: req.session.userId,
+     body,
+    userId: req.session.userId,
     });
-    res.json(Posts);
-    console.log(Posts);
+    res.json(newDescription);
   } catch ({ message }) {
     res.status(500).json(message);
   }
@@ -40,7 +38,7 @@ router.post('/', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const result = await Post.destroy({ where: { id } });
+    await Description.destroy({ where: { id } });
     res.json(Number(id));
   } catch ({ message }) {
     res.status(500).json(message);
@@ -50,14 +48,14 @@ router.delete('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const { img, title, description } = req.body;
-    if (img && title && description) {
-      const Post = await Post.findOne({ where: { id: Number(id) } });
-      Post.img = img;
-      Post.title = title;
-      Post.description = description;
-      Post.save();
-      res.json(Post);
+    const { img, body } = req.body;
+    if (img && body) {
+      const changeDescription = await Description.findOne({ where: { id: Number(id) } });
+      changeDescription.img = img;
+    changeDescription.body = body;
+
+      changeDescription.save();
+      res.json(changeDescription);
     }
   } catch ({ message }) {
     res.status(500).json(message);

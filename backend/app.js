@@ -8,6 +8,7 @@ const apiAuthRoute = require('./routes/auth.routes');
 const apiPostRoute = require('./routes/posts.routes');
 const apiReqRoute = require('./routes/req.routes');
 const apiNewsRoute = require('./routes/news.routes');
+const apiDescrRoute = require('./routes/description.routes');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -18,6 +19,7 @@ app.use('/api/auth', apiAuthRoute);
 app.use('/api/posts', apiPostRoute);
 app.use('/api/requests', apiReqRoute);
 app.use('/api/news', apiNewsRoute);
+app.use('/api/about', apiDescrRoute);
 
 const start = async () => {
   try {

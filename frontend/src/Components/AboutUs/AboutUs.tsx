@@ -1,4 +1,5 @@
 import React from 'react';
+import DescriptionCardPage from './DescriptionCardPage';
 
 export default function AboutUs(): JSX.Element {
     return (
@@ -7,6 +8,7 @@ export default function AboutUs(): JSX.Element {
             <h5 style={{ fontWeight: 'italic', color: 'white' }}>Мы - маркетинговое агентство для сферы недвижимости
                 с 2-х летним опытом и множеством успешных кейсов.
             </h5>
+            <DescriptionCardPage />
         </div>
     );
 }
