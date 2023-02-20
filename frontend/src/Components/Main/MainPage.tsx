@@ -36,7 +36,7 @@ export default function MainPage(): JSX.Element {
         <h5
           style={{
             position: 'absolute',
-            top: '40%',
+            top: '50%',
             left: '7%',
             color: 'black',
             fontSize: '30px',
@@ -47,7 +47,7 @@ export default function MainPage(): JSX.Element {
         <h5
           style={{
             position: 'absolute',
-            top: '45%',
+            top: '60%',
             left: '7%',
             color: 'black',
             fontSize: '30px',
@@ -55,9 +55,9 @@ export default function MainPage(): JSX.Element {
         >
           риэлторскими агенствами и отелями
         </h5>
-      </div>
-      <div style={{ marginTop: '-400px', marginLeft: '100px' }}>
-        <Modal />
+        <div style={{ marginTop: '-500px', marginLeft: '-1200px' }}>
+          <Modal />
+        </div>
       </div>
       <div
         className="flex"
