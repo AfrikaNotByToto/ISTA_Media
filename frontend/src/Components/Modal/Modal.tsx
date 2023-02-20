@@ -15,7 +15,7 @@ function Modal(): JSX.Element {
       <div className="flex items-center justify-center h-full">
         <button
           type="button"
-          className="py-2 px-4 bg-blue-700 text-white rounded hover:bg-blue-800"
+          className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
           onClick={toggleModal}
         >
           Чек-лист
@@ -56,7 +56,7 @@ function Modal(): JSX.Element {
                 type="button"
                 className="py-2 px-4 bg-blue-700 text-white rounded hover:bg-blue-800 mr-2"
               >
-                <i className="fas fa-plus" /> Отправить
+                <i className="fas fa-plus" /> Получить
               </button>
             </div>
           </div>

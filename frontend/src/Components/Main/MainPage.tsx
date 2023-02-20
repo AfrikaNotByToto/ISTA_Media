@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import CallBackForm from '../CallBackFom/CallBackForm';
 import Modal from '../Modal/Modal';
 
 // import Requests from './Requests';
@@ -68,15 +69,7 @@ export default function MainPage(): JSX.Element {
           width: 'auto',
         }}
       />
-      {/* <div>
-        <div>
-          {' '}
-          <Request /> */}
-      {/* <div>
-            <Requests />
-          </div> */}
-      {/* </div>
-      </div> */}
+      <CallBackForm />
     </>
   );
 }

@@ -4,7 +4,11 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        '2cxl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+      },
+    },
   },
   plugins: [require('daisyui')],
 };
