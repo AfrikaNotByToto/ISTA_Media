@@ -15,7 +15,6 @@ import AboutUs from '../Components/AboutUs/AboutUs';
 import { useAppDispatch } from '../store';
 import { checkUser } from '../Components/auth/authRegSlice';
 
-
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
 
@@ -42,7 +41,6 @@ function App(): JSX.Element {
         {/* </Route> */}
       </Routes>
     </div>
-
   );
 }
 
