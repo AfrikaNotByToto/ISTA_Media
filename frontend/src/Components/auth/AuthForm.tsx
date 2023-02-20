@@ -10,8 +10,6 @@ function Authorization(): JSX.Element {
   const dispatch = useAppDispatch();
   const nav = useNavigate();
   const { user, message } = useSelector((store: RootState) => store.users);
-  console.log(user);
-  console.log(message);
   useEffect(() => {
     if ('userName' in user) {
       nav('/adminPage');
