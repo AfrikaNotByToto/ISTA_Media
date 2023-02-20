@@ -8,6 +8,6 @@ export type OneNews = {
 };
 export type State = {
   news: OneNews[];
-  error: undefined | string;
+  message: undefined | string;
 };
 export type NewsId = OneNews['id'];

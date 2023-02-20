@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 
 import { useAppDispatch } from '../../store';
-import { updateDPost } from '../Posts/PostSlice';
-import { Post } from '../Posts/Types/types';
+import { Description } from '../AboutUs/Types/type';
+import { updateDescriptions } from '../AboutUs/descriptionSlicer';
 
-export default function UpdatedPost({
+export default function UpdatedDescription({
   open,
-  post,
+  description,
 }: {
-  post: Post;
+  description: Description;
   open: () => void;
 }): JSX.Element {
-  const [img, setImg] = useState(post.img);
-  const [title, setTitle] = useState(post.title);
-  const [description, setDescription] = useState(post.description);
+  const [img, setImg] = useState(description.img);
+  const [body, setBody] = useState(description.body);
 
   const dispatch = useAppDispatch();
-  const updatedPost = (e: React.FormEvent<HTMLFormElement>): void => {
+  const updatedDescriptionOne = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    dispatch(updateDPost({ id: post.id, img, title, description }));
+    dispatch(updateDescriptions({ id: description.id, img, body }));
     open();
   };
   const addImg = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -40,7 +39,7 @@ export default function UpdatedPost({
           aria-modal="true"
           aria-labelledby="modal-headline"
         >
-          <form className="bg-pink-400" onSubmit={updatedPost}>
+          <form className="bg-pink-400" onSubmit={updatedDescriptionOne}>
             <div className="mb-6">
               <label
                 htmlFor="img"
@@ -60,23 +59,6 @@ export default function UpdatedPost({
             </div>
             <div className="mb-6">
               <label
-                htmlFor="title"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >
-                Заголовок
-              </label>
-              <input
-                type="text"
-                id="title"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Заголовок"
-                name="title"
-                defaultValue={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            </div>
-            <div className="mb-6">
-              <label
                 htmlFor="description"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
@@ -88,8 +70,8 @@ export default function UpdatedPost({
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Описание"
                 name="description"
-                defaultValue={description}
-                onChange={(e) => setDescription(e.target.value)}
+                defaultValue={body}
+                onChange={(e) => setBody(e.target.value)}
               />
             </div>
             <button

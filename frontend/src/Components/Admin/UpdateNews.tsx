@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 
 import { useAppDispatch } from '../../store';
-import { updateDPost } from '../Posts/PostSlice';
-import { Post } from '../Posts/Types/types';
+import { OneNews } from '../News/Types/types';
+import { updatedNews } from '../News/NewsSlice';
 
-export default function UpdatedPost({
+export default function UpdatedNew({
   open,
-  post,
+  oneNews,
 }: {
-  post: Post;
+  oneNews: OneNews;
   open: () => void;
 }): JSX.Element {
-  const [img, setImg] = useState(post.img);
-  const [title, setTitle] = useState(post.title);
-  const [description, setDescription] = useState(post.description);
+  const [img, setImg] = useState(oneNews.img);
+  const [title, setTitle] = useState(oneNews.title);
+  const [description, setDescription] = useState(oneNews.description);
+  const [url, setUrl] = useState(oneNews.url);
 
   const dispatch = useAppDispatch();
-  const updatedPost = (e: React.FormEvent<HTMLFormElement>): void => {
+  const updNew = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    dispatch(updateDPost({ id: post.id, img, title, description }));
+    dispatch(updatedNews({ id: oneNews.id, img, title, description, url }));
     open();
   };
   const addImg = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -40,7 +41,7 @@ export default function UpdatedPost({
           aria-modal="true"
           aria-labelledby="modal-headline"
         >
-          <form className="bg-pink-400" onSubmit={updatedPost}>
+          <form className="bg-pink-400" onSubmit={updNew}>
             <div className="mb-6">
               <label
                 htmlFor="img"
@@ -90,6 +91,23 @@ export default function UpdatedPost({
                 name="description"
                 defaultValue={description}
                 onChange={(e) => setDescription(e.target.value)}
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="url"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Url
+              </label>
+              <input
+                type="text"
+                id="url"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Описание"
+                name="url"
+                defaultValue={url}
+                onChange={(e) => setUrl(e.target.value)}
               />
             </div>
             <button
