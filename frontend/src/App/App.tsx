@@ -10,8 +10,11 @@ import MainPage from '../Components/Main/MainPage';
 import AdminPage from '../Components/Admin/AdminPage';
 import Registration from '../Components/auth/RegistrationForm';
 import Authorization from '../Components/auth/AuthForm';
+
+import AboutUs from '../Components/AboutUs/AboutUs';
 import { useAppDispatch } from '../store';
 import { checkUser } from '../Components/auth/authRegSlice';
+
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -21,18 +24,25 @@ function App(): JSX.Element {
   }, []);
   return (
     <div>
+      <NavBar />
+      {/* <Route path="/" element={<NavBar />}> */}
+
       <Routes>
-        <Route path="/" element={<NavBar />}>
-          {/* <Route index element={<MainPage />} /> */}
-          <Route path="/cases" element={<PostPage />} />
-          <Route index element={<MainPage />} />
-          <Route path="/adminPage" element={<AdminPage />} />
-          <Route path="/news" element={<NewsPage />} />
-          <Route path="/admin" element={<Authorization />} />
-          <Route path="registration" element={<Registration />} />
-        </Route>
+        {/* <Route index element={<MainPage />} /> */}
+
+        <Route path="/cases" element={<PostPage />} />
+        <Route index element={<MainPage />} />
+        <Route path="/adminPage" element={<AdminPage />} />
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/admin" element={<Authorization />} />
+        <Route path="registration" element={<Registration />} />
+
+        <Route path="/about" element={<AboutUs />} />
+
+        {/* </Route> */}
       </Routes>
     </div>
+
   );
 }
 

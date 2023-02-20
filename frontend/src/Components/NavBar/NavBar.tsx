@@ -46,9 +46,9 @@ export default function NavBar(): JSX.Element {
                 className="flex space-evenly "
                 style={{ width: '25%', justifyContent: 'space-between' }}
               >
-                {/* <NavLink className="text-xl text-white" to="/about">
+                <NavLink className="text-xl text-white" to="/about">
                   О нас
-                </NavLink> */}
+                </NavLink>
                 <NavLink className="text-xl text-white" to="/cases">
                   Кейсы
                 </NavLink>
