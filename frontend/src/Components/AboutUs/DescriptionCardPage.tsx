@@ -1,31 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../store';
-import DescriptionCard from './DescriptionCard';
 import { initDescription } from './descriptionSlicer';
+import TryAboutUs from './TryAboutUs';
 
 export default function DescriptionCardPage(): JSX.Element {
+    const [loading, setLoading] = useState(true);
     const state = useSelector((store: RootState) => store.descriptions.descriptions);
     const dispatch = useAppDispatch();
-    useEffect((): void => {
-        dispatch(initDescription());
+    useLayoutEffect((): void => {
+        dispatch(initDescription()).finally(() => setLoading(false));
     }, [dispatch]);
     return (
         <div>
-            {state ? (
-                <div>
-                    <div style={{ display: 'grid', flexFlow: 'row wrap', gridTemplateColumns: 'repeat(3, 1fr)', margin: '2rem 1rem 1rem 14rem' }}>
-                        {state.map((description) => (
-                            <DescriptionCard key={description.id} description={description} />
-                        ))}
-                    </div>
-                </div>
-
-            ) : (
-                <>
-                    <div>YOU OBOSRALSIA</div>
-                    <div>{state}</div>
-                </>
+            {loading ? (<div>Загрузка</div>) : (
+                <TryAboutUs state={state} />
             )}
         </div>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import { RootState, useAppDispatch } from '../../store';
 import { LogoutCheck } from '../auth/authRegSlice';
 
@@ -46,15 +46,15 @@ export default function NavBar(): JSX.Element {
                 className="flex space-evenly "
                 style={{ width: '25%', justifyContent: 'space-between' }}
               >
-                <NavLink className="text-xl text-white" to="/about">
+                <Link className="text-xl text-white" to="/about">
                   О нас
-                </NavLink>
-                <NavLink className="text-xl text-white" to="/cases">
+                </Link>
+                <Link className="text-xl text-white" to="/cases">
                   Кейсы
-                </NavLink>
-                <NavLink className="text-xl text-white" to="/news">
+                </Link>
+                <Link className="text-xl text-white" to="/news">
                   Новости
-                </NavLink>
+                </Link>
               </div>
             )}
           </div>

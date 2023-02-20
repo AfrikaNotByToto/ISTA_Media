@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useSelector } from 'react-redux';
 // import { useParams } from 'react-router-dom';
 import { RootState, useAppDispatch } from '../../store';
@@ -9,7 +9,7 @@ function NewsPage(): JSX.Element {
   // const { postId } = useParams();
   const state = useSelector((store: RootState) => store.news.news);
   const dispatch = useAppDispatch();
-  useEffect((): void => {
+  useLayoutEffect((): void => {
     dispatch(initNews());
   }, [dispatch]);
   return (
