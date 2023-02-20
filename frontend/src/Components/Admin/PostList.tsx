@@ -16,7 +16,7 @@ function PostList(): JSX.Element {
     <div>
       {posts ? (
         <div>
-          <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
+          <div className="carousel carousel-center max-w-4/5 p-4 space-x-4 bg-neutral rounded-box">
             {posts.map((post) => (
               <SoloPost key={post.id} post={post} />
             ))}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../store';
@@ -10,7 +10,7 @@ function Authorization(): JSX.Element {
   const dispatch = useAppDispatch();
   const nav = useNavigate();
   const { user, message } = useSelector((store: RootState) => store.users);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if ('userName' in user) {
       nav('/adminPage');
     }

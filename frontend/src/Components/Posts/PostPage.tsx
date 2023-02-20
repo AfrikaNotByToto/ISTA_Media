@@ -17,7 +17,6 @@ function PostPage(): JSX.Element {
     <div>
       {modal ? (<div style={{ width: '1000px', height: '1000px' }}> Загрузка</div>) : (
         <TryPost state={state} />
-      )}
     </div>
   );
 }

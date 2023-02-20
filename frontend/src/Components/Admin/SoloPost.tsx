@@ -29,18 +29,18 @@ function SoloPost({ post }: { post: Post }): JSX.Element {
             {post.description}
           </p>
         </div>
-        <div className="inline-flex">
+        <div className="flex-col">
           <button
             onClick={del}
             type="button"
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold rounded resize-y"
           >
             Delete
           </button>
           <button
             onClick={open}
             type="button"
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold rounded wd-40 h-5"
           >
             Update
           </button>
