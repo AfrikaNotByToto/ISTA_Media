@@ -5,7 +5,7 @@ import { State, OneNews, NewsId } from './Types/types';
 
 const initialState: State = {
   news: [],
-  error: undefined,
+  message: undefined,
 };
 
 export const initNews = createAsyncThunk('news/load', () => api.loadNews());
@@ -14,6 +14,9 @@ export const addNews = createAsyncThunk('news/add', (newNews: OneNews) =>
 );
 export const deleteNews = createAsyncThunk('news/delete', (id: NewsId) =>
   api.delNews(id)
+);
+export const updatedNews = createAsyncThunk('news/update', (oneNews: OneNews) =>
+  api.updateNews(oneNews)
 );
 
 const newsSlice = createSlice({
@@ -26,21 +29,28 @@ const newsSlice = createSlice({
         state.news = action.payload;
       })
       .addCase(initNews.rejected, (state, action) => {
-        state.error = action.error.message;
+        state.message = action.error.message;
       })
       .addCase(addNews.fulfilled, (state, action) => {
         state.news.push(action.payload);
       })
       .addCase(addNews.rejected, (state, action) => {
-        state.error = action.error.message;
+        state.message = action.error.message;
       })
       .addCase(deleteNews.fulfilled, (state, action) => {
-        const arr = state.news.filter((post) => post.id !== action.payload);
+        const arr = state.news.filter((OneNew) => OneNew.id !== action.payload);
         state.news = arr;
-        console.log(state.news);
       })
       .addCase(deleteNews.rejected, (state, action) => {
-        state.error = action.error.message;
+        state.message = action.error.message;
+      })
+      .addCase(updatedNews.fulfilled, (state, action) => {
+        state.news = state.news.map((newNews) =>
+          newNews.id === action.payload.id ? action.payload : newNews
+        );
+      })
+      .addCase(updatedNews.rejected, (state, action) => {
+        state.message = action.error.message;
       });
   },
 });

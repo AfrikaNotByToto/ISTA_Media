@@ -23,15 +23,15 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const { img, body } = req.body;
-    console.log(req.body);
-    const newDescription = await Decription.create({
+    const newDescription = await Description.create({
       img,
-     body,
-    userId: req.session.userId,
+      body,
+      userId: req.session.userId,
     });
-    res.json(newDescription);
-  } catch ({ message }) {
-    res.status(500).json(message);
+    console.log(newDescription);
+    res.status(200).json(newDescription);
+  } catch (message) {
+    res.status(500).json({ message: 'Crushed' });
   }
 });
 
@@ -49,16 +49,11 @@ router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { img, body } = req.body;
-    if (img && body) {
-      const changeDescription = await Description.findOne({ where: { id: Number(id) } });
-      changeDescription.img = img;
-    changeDescription.body = body;
-
-      changeDescription.save();
-      res.json(changeDescription);
-    }
-  } catch ({ message }) {
-    res.status(500).json(message);
+    await Description.update({ img, body }, { where: { id } });
+    const data = await Description.findOne({ where: { id } });
+    res.json(data);
+  } catch (message) {
+    res.status(500).json({ message: ' Crushed' });
   }
 });
 

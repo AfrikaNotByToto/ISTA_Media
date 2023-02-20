@@ -105,6 +105,7 @@ export const updateNews = async (oneNews: OneNews): Promise<OneNews> => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
+      id: oneNews.id,
       img: oneNews.img,
       title: oneNews.title,
       description: oneNews.description,
