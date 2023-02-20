@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
@@ -16,7 +16,7 @@ import { checkUser } from '../Components/auth/authRegSlice';
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     dispatch(checkUser());
   }, []);
   return (

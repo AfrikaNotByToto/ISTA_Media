@@ -7,17 +7,17 @@ import { initPosts } from '../Posts/PostSlice';
 
 function PostList(): JSX.Element {
   // const { postId } = useParams();
-  const state = useSelector((store: RootState) => store.posts.posts);
+  const { posts, error } = useSelector((store: RootState) => store.posts);
   const dispatch = useAppDispatch();
   useEffect((): void => {
     dispatch(initPosts());
-  }, [dispatch]);
+  }, []);
   return (
     <div>
-      {state ? (
+      {posts ? (
         <div>
           <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
-            {state.map((post) => (
+            {posts.map((post) => (
               <SoloPost key={post.id} post={post} />
             ))}
           </div>
@@ -25,7 +25,7 @@ function PostList(): JSX.Element {
       ) : (
         <>
           <div>YOU OBOSRALSIA</div>
-          <div>{state}</div>
+          <div>{error}</div>
         </>
       )}
     </div>
