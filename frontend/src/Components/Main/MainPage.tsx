@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import Modal from '../Modal/Modal';
 
 // import Requests from './Requests';
 // import Request from '../Requests/Request';
@@ -54,6 +55,9 @@ export default function MainPage(): JSX.Element {
         >
           риэлторскими агенствами и отелями
         </h5>
+      </div>
+      <div style={{ marginTop: '-400px', marginLeft: '100px' }}>
+        <Modal />
       </div>
       <div
         className="flex"
