@@ -14,12 +14,13 @@ export default function DescriptionCardPage(): JSX.Element {
         <div>
             {state ? (
                 <div>
-                    <div className="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
+                    <div style={{ display: 'grid', flexFlow: 'row wrap', gridTemplateColumns: 'repeat(3, 1fr)', margin: '2rem 1rem 1rem 14rem' }}>
                         {state.map((description) => (
                             <DescriptionCard key={description.id} description={description} />
                         ))}
                     </div>
                 </div>
+
             ) : (
                 <>
                     <div>YOU OBOSRALSIA</div>

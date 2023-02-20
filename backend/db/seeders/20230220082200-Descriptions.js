@@ -25,7 +25,7 @@ module.exports = {
         userId: 1,
       },
       {
-        img: 'https://cdn4.vectorstock.com/i/1000x1000/01/03/drone-icon-in-black-style-vector-15650103.jpg',
+        img: 'https://static.vecteezy.com/system/resources/previews/007/877/697/original/drone-icon-style-free-vector.jpg',
        body: 'Аэоросъемка',
         userId: 1,
       },
