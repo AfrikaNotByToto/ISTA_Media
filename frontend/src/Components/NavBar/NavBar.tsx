@@ -2,10 +2,15 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { NavLink, Outlet } from 'react-router-dom';
-import { RootState } from '../../store';
+import { RootState, useAppDispatch } from '../../store';
+import { LogoutCheck } from '../auth/authRegSlice';
 
 export default function NavBar(): JSX.Element {
   const { user } = useSelector((store: RootState) => store.users);
+  const dispatch = useAppDispatch();
+  const vixod = (): void => {
+    dispatch(LogoutCheck());
+  };
   return (
     <>
       <nav className="flex flex-col justify-center items-center py-3 bg-black text-white shadow-lg navbar navbar-expand-lg navbar-light">
@@ -14,7 +19,7 @@ export default function NavBar(): JSX.Element {
             <NavLink className="text-xl text-white" to="/">
               <img src="/img/2023-02-16 16.27.36.jpg" style={{ height: '30px' }} alt="" />
             </NavLink>
-            {'userName' in user ? (
+            {'id' in user ? (
               <>
                 <NavLink className="text-xl text-white" to="/adminPage">
                   <img
@@ -30,6 +35,9 @@ export default function NavBar(): JSX.Element {
                   <div>Admin Panel</div>
                   <NavLink className="text-xl text-white" to="/registration">
                     <div>Регистрация</div>
+                  </NavLink>
+                  <NavLink className="text-xl text-white" to="/">
+                    <div onClick={vixod}>Выйти</div>
                   </NavLink>
                 </div>
               </>

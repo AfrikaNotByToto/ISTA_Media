@@ -29,3 +29,21 @@ export const regUser = async (newUser: User): Promise<State> => {
   });
   return res.json();
 };
+export const getCheckUser = async (): Promise<State> => {
+  const res = await fetch('http://localhost:4000/api/auth/check', {
+    credentials: 'include',
+  });
+
+  const data = await res.json();
+  console.log(data);
+  return data;
+};
+export const Logout = async (): Promise<State> => {
+  const res = await fetch('http://localhost:4000/api/auth/logout', {
+    credentials: 'include',
+  });
+
+  const data = await res.json();
+  console.log(data);
+  return data;
+};
