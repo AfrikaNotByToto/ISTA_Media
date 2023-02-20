@@ -9,21 +9,23 @@ export default function MainPage(): JSX.Element {
     <>
       <div className="container" style={{ position: 'relative' }}>
         <img
-          className="bg-contain bg-center"
-          src="https://images.squarespace-cdn.com/content/v1/5d0ade01fc40e30001b4a6c5/1611179474887-THCHA3NFBUUQD9DGLOSV/bw+spiral+gif.gif"
+          // className="bg-contain bg-center"
+          src="/img/4.png"
           alt=""
           style={{
-            height: '100%',
-            width: '100%',
+            height: '60%',
+            width: '60%',
+            marginLeft: '65%',
+            marginTop: '3%',
           }}
         />
         <h1
           className="h11"
           style={{
             position: 'absolute',
-            top: '15%',
-            left: '5%',
-            color: 'whitesmoke',
+            top: '20%',
+            left: '7%',
+            color: 'black',
             fontSize: '60px',
             fontWeight: 'bolder',
           }}
@@ -33,9 +35,9 @@ export default function MainPage(): JSX.Element {
         <h5
           style={{
             position: 'absolute',
-            top: '30%',
-            left: '5%',
-            color: 'whitesmoke',
+            top: '40%',
+            left: '7%',
+            color: 'black',
             fontSize: '30px',
           }}
         >
@@ -44,9 +46,9 @@ export default function MainPage(): JSX.Element {
         <h5
           style={{
             position: 'absolute',
-            top: '38%',
-            left: '5%',
-            color: 'whitesmoke',
+            top: '45%',
+            left: '7%',
+            color: 'black',
             fontSize: '30px',
           }}
         >
