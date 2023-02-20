@@ -3,11 +3,17 @@ import React from 'react';
 function CallBackForm(): JSX.Element {
   return (
     <div
-      className="container mx-auto px-4 py-14 sm:px-6 xl:px-12"
-      style={{ marginTop: '400px' }}
+      className=" container mx-auto px-4 py-14 sm:px-6 xl:px-12"
+      style={{ marginTop: '600px' }}
     >
+      <span style={{ fontSize: '2rem', marginLeft: '25%' }}>
+        Получите бесплатную консультация маркетолога
+      </span>
+      <br />
+      <br />
+      <br />
       <div className="flex flex-col items-center justify-center space-y-6 text-center">
-        <form className="flex w-full max-w-full flex-col items-center space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3">
+        <form className="flex w-4/6 max-w-full flex-col items-center space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3">
           <input
             type="email"
             className="w-full rounded-md border bg-gray-50 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
@@ -22,6 +28,7 @@ function CallBackForm(): JSX.Element {
           </button>
         </form>
       </div>
+      <img style={{ width: '40%', height: '40%' }} src="/img/3.jpg" alt="gif" />
     </div>
   );
 }

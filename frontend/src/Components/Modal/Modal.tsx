@@ -1,15 +1,18 @@
 import React from 'react';
+// import * as api from '../../App/api';
 
 function Modal(): JSX.Element {
-  //   const [modal, setModal] = useState(false);
+  // const [name, setName] = useState('');
+  // const [mail, setMail] = useState('');
 
-  //   const toggle = (): void => {
-  //     setModal((prev: boolean) => !prev);
-  //   };
   function toggleModal(): void {
     document.getElementById('modal')?.classList.toggle('hidden');
   }
 
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
+    // api.({name, mail});
+  };
   return (
     <>
       <div className="flex items-center justify-center h-full">
@@ -40,9 +43,17 @@ function Modal(): JSX.Element {
             </p>
             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <label>Ваше имя</label>
-              <input type="text" className="w-full bg-gray-100 p-2 mt-2 mb-3" />
+              <input
+                // onChange={(e) => setName(e.target.value)}
+                type="text"
+                className="w-full bg-gray-100 p-2 mt-2 mb-3"
+              />
               <label>E-mail</label>
-              <input type="text" className="w-full bg-gray-100 p-2 mt-2 mb-3" />
+              <input
+                // onChange={(e) => setMail(e.target.value)}
+                type="text"
+                className="w-full bg-gray-100 p-2 mt-2 mb-3"
+              />
             </div>
             <div className="bg-gray-200 px-4 py-3 text-right">
               <button
@@ -53,6 +64,7 @@ function Modal(): JSX.Element {
                 <i className="fas fa-times" /> Закрыть
               </button>
               <button
+                onClick={handleClick}
                 type="button"
                 className="py-2 px-4 bg-blue-700 text-white rounded hover:bg-blue-800 mr-2"
               >
