@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
 import * as api from '../../App/api';
 
+import { useAppDispatch } from '../../store';
+import { addPhones } from './FooterSlice';
+
 function Footer(): JSX.Element {
-  const [msg, setMsg] = useState('');
-  // const [error, setError] = useState(false);
+  const [phone, setPhone] = useState('');
+  const dispatch = useAppDispatch();
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
+  const addedPhone = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    if (msg) {
-      api.sendMessageTelegram({ msg });
-      setMsg('');
-      // setError(false);
-    }
+    if (phone) {
+      dispatch(addPhones({ phone }));
+      api.sendMessageTelegram({msg: phone });
+    setPhone('');}
   };
-
+  
+  
   return (
-    <footer className="flex justify-center px-4 text-gray-100 bg-black">
-      <div className="container py-6">
+    <footer className="flex justify-center px-2 text-gray-100 bg-black">
+      <div className="container py-3">
         <h1 className="text-center text-lg font-bold lg:text-xl">
           Свяжитесь с нами <br />
         </h1>
@@ -24,20 +27,25 @@ function Footer(): JSX.Element {
         <div className="flex justify-center mt-6">
           <div className="bg-white rounded-lg">
             <div className="flex flex-wrap justify-between md:flex-row">
-              <input
-                type="phone"
-                value={msg}
-                onChange={(e) => setMsg(e.target.value)}
-                className="m-1 p-2 appearance-none text-gray-700 text-sm focus:outline-none"
-                placeholder="Введите телефон"
-              />
-              <button
-                type="button"
+              <form onSubmit={addedPhone}>
+                <input
+                  type="tel"
+                  className="m-1 p-2 appearance-none text-gray-700 text-sm focus:outline-none"
+                  placeholder="89999999999"
+                  pattern="[0-9]{11}"
+                  value={phone}
+                  onChange={(e) => {
+                    setPhone(e.target.value);
+                  }}
+                />
+                <button
                 onClick={handleClick}
-                className="w-full m-1 p-2 text-sm bg-blue-700 rounded-lg font-semibold uppercase transition hover:border-blue-800 hover:bg-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-700 lg:w-auto"
-              >
-                отправить
-              </button>
+                  type="submit"
+                  className="w-full m-1 p-2 text-sm bg-blue-700 rounded-lg font-semibold uppercase transition hover:border-blue-800 hover:bg-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-700 lg:w-auto"
+                >
+                  отправить
+                </button>
+              </form>
             </div>
           </div>
         </div>

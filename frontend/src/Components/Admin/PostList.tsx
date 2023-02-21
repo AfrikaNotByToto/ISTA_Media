@@ -15,12 +15,12 @@ function PostList(): JSX.Element {
   return (
     <div>
       {posts ? (
-        <div>
-          <div className="carousel carousel-center max-w-4/5 p-4 space-x-4 bg-neutral rounded-box">
-            {posts.map((post) => (
-              <SoloPost key={post.id} post={post} />
-            ))}
-          </div>
+        <div className="grid grid-cols-3 gap-3 justify-center" style={{ marginLeft: '7rem' }}>
+
+          {posts.map((post) => (
+            <SoloPost key={post.id} post={post} />
+          ))}
+
         </div>
       ) : (
         <>

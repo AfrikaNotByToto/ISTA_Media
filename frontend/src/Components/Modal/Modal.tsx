@@ -34,7 +34,7 @@ function Modal(): JSX.Element {
   };
   return (
     <>
-      <div className="flex items-center justify-center h-full">
+      <div style={{ marginTop: '40%', marginLeft: '7%' }}>
         <button
           type="button"
           className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"

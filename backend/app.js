@@ -12,6 +12,8 @@ const apiEasyWeekRoute = require('./routes/easyweek.routes');
 const apiMail = require('./routes/mail.routes');
 const apiEmailForm = require('./routes/emailForm.routes');
 const apiTelegram = require('./routes/telegram.routes');
+const apiPhoneForm = require('./routes/phoneForm.routes');
+
 
 
 const app = express();
@@ -27,6 +29,8 @@ app.use('/api/easyweek', apiEasyWeekRoute);
 app.use('/api/mail', apiMail);
 app.use('/api/email', apiEmailForm);
 app.use('/api/telegram', apiTelegram);
+app.use('/api/phone', apiPhoneForm);
+
 
 const start = async () => {
   try {

@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+// import 'normalize.css';
 
 import NavBar from '../Components/NavBar/NavBar';
 
@@ -14,6 +15,7 @@ import Authorization from '../Components/auth/AuthForm';
 import AboutUs from '../Components/AboutUs/AboutUs';
 import { useAppDispatch } from '../store';
 import { checkUser } from '../Components/auth/authRegSlice';
+import Footer from '../Components/Footer/Footer';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -22,7 +24,7 @@ function App(): JSX.Element {
     dispatch(checkUser());
   }, []);
   return (
-    <div>
+    <div className="w-full">
       <NavBar />
       {/* <Route path="/" element={<NavBar />}> */}
 
@@ -40,6 +42,7 @@ function App(): JSX.Element {
 
         {/* </Route> */}
       </Routes>
+      <Footer />
     </div>
   );
 }
