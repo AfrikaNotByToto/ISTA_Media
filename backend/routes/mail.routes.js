@@ -22,9 +22,9 @@ router.post('/', async (req, res) => {
         }
 
         transporter.sendMail(mailOptions, (err) => console.log(err))
-        res.status(200).json({message: 'sent'})
+        res.status(200).json(req.body)
     } catch (e) {
-        res.status(500).json({message: 'error'})
+        res.status(500).json(req.body)
     }
 });
 

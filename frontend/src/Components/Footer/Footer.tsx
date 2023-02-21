@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import * as api from '../../App/api';
+
 import { useAppDispatch } from '../../store';
 import { addPhones } from './FooterSlice';
 
@@ -8,9 +10,13 @@ function Footer(): JSX.Element {
 
   const addedPhone = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    dispatch(addPhones({ phone }));
-    setPhone('');
+    if (phone) {
+      dispatch(addPhones({ phone }));
+      api.sendMessageTelegram({msg: phone });
+    setPhone('');}
   };
+  
+  
   return (
     <footer className="flex justify-center px-2 text-gray-100 bg-black">
       <div className="container py-3">
@@ -33,6 +39,7 @@ function Footer(): JSX.Element {
                   }}
                 />
                 <button
+                onClick={handleClick}
                   type="submit"
                   className="w-full m-1 p-2 text-sm bg-blue-700 rounded-lg font-semibold uppercase transition hover:border-blue-800 hover:bg-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-700 lg:w-auto"
                 >
@@ -42,7 +49,6 @@ function Footer(): JSX.Element {
             </div>
           </div>
         </div>
-
         <hr className="h-px mt-6 bg-gray-700 border-none" />
 
         <div className="flex flex-col items-center justify-between mt-6 md:flex-row">

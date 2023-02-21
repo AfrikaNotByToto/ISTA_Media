@@ -10,10 +10,21 @@ function Modal(): JSX.Element {
     document.getElementById('modal')?.classList.toggle('hidden');
   }
 
+//   document.addEventListener('keyup', (event) => {
+//     event.preventDefault();
+//     console.log(event);
+//  if (event.code === 'Enter') {
+//       api.sendEmailList({ name, mail });
+//       setName('');
+//       setMail('');
+//       document.getElementById('modal')?.classList.toggle('hidden');
+//   }
+// });
+
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
     if (name && mail) {
-      api.sendEmail({ name, mail });
+      api.sendEmailList({ name, mail });
       setName('');
       setMail('');
       document.getElementById('modal')?.classList.toggle('hidden');
@@ -77,7 +88,7 @@ function Modal(): JSX.Element {
               <button
                 onClick={handleClick}
                 type="button"
-                className="py-2 px-4 bg-blue-700 text-white rounded hover:bg-blue-800 mr-2"
+                className="py-2 px-4 bg-blue-700 text-white rounded hover:bg-blue-800 mr-2 handleenter"
               >
                 <i className="fas fa-plus" /> Получить
               </button>

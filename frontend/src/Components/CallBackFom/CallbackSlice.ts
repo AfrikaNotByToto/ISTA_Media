@@ -8,7 +8,7 @@ const initialState: State = {
 };
 
 export const addEmailss = createAsyncThunk('emails/add', (newEmail: Emailform) =>
-  api.addEmail(newEmail)
+  api.addEmailList(newEmail)
 );
 
 const emailsSlice = createSlice({

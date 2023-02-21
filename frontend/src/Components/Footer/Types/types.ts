@@ -1,3 +1,7 @@
+
+export type NewMessage = {
+  msg: string;
+};
 export type PhoneForm = {
   id?: number;
   phone: string;
