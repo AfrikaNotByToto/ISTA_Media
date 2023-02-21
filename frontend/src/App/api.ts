@@ -1,5 +1,6 @@
 import { Post, PostId } from '../Components/Posts/Types/types';
 import { Request } from '../Components/Requests/Types/types';
+import { CheckList } from '../Components/Modal/Types/type';
 import { OneNews, NewsId } from '../Components/News/Types/types';
 
 export const loadPosts = async (): Promise<Post[]> => {
@@ -31,13 +32,12 @@ export const delPost = async (id: PostId): Promise<PostId> => {
 };
 
 export const updatePost = async (post: Post): Promise<Post> => {
-  const res = await fetch(`http://localhost:4000/api/posts/${post.id}`, {
+  const res = await fetch(`http://localhost:4000/api/Posts/${post.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      id: post.id,
       img: post.img,
       title: post.title,
       description: post.description,
@@ -105,11 +105,24 @@ export const updateNews = async (oneNews: OneNews): Promise<OneNews> => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      id: oneNews.id,
       img: oneNews.img,
       title: oneNews.title,
       description: oneNews.description,
       url: oneNews.url,
+    }),
+  });
+  return res.json();
+};
+
+export const sendEmail = async (checkList: CheckList): Promise<void> => {
+  const res = await fetch('http://localhost:4000/api/mail', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name: checkList.name,
+      mail: checkList.mail
     }),
   });
   return res.json();
