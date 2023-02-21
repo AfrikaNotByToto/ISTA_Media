@@ -1,6 +1,7 @@
 import { Post, PostId } from '../Components/Posts/Types/types';
 import { Request } from '../Components/Requests/Types/types';
-import { CheckList } from '../Components/Modal/Types/type';
+import { CheckList } from '../Components/Modal/Types/types';
+import { NewMessage } from '../Components/Footer/Types/types';
 import { OneNews, NewsId } from '../Components/News/Types/types';
 import { Emailform } from '../Components/CallBackFom/Types/types';
 
@@ -115,8 +116,7 @@ export const updateNews = async (oneNews: OneNews): Promise<OneNews> => {
   return res.json();
 };
 
-
-export const sendEmail = async (checkList: CheckList): Promise<void> => {
+export const sendEmailList = async (checkList: CheckList): Promise<CheckList> => {
   const res = await fetch('http://localhost:4000/api/mail', {
     method: 'post',
      headers: {
@@ -130,8 +130,7 @@ export const sendEmail = async (checkList: CheckList): Promise<void> => {
   return res.json();
 };
 
-
-export const addEmail = async (newEmail: Emailform): Promise<Emailform> => {
+export const addEmailList = async (newEmail: Emailform): Promise<Emailform> => {
   const res = await fetch('http://localhost:4000/api/email', {
     method: 'POST',
     headers: {
@@ -140,6 +139,19 @@ export const addEmail = async (newEmail: Emailform): Promise<Emailform> => {
     body: JSON.stringify({
       id: newEmail.id,
       email: newEmail.email,
+    }),
+  });
+  return res.json();
+};
+
+export const sendMessageTelegram = async (newMessage: NewMessage): Promise<NewMessage> => {
+  const res = await fetch('http://localhost:4000/api/telegram', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      message: newMessage.msg,
     }),
   });
   return res.json();

@@ -1,6 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import * as api from '../../App/api';
 
 function Footer(): JSX.Element {
+  const [msg, setMsg] = useState('');
+  // const [error, setError] = useState(false);
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
+    if (msg) {
+      api.sendMessageTelegram({ msg });
+      setMsg('');
+      // setError(false);
+    }
+  };
+
   return (
     <footer className="flex justify-center px-4 text-gray-100 bg-black">
       <div className="container py-6">
@@ -13,11 +26,14 @@ function Footer(): JSX.Element {
             <div className="flex flex-wrap justify-between md:flex-row">
               <input
                 type="phone"
+                value={msg}
+                onChange={(e) => setMsg(e.target.value)}
                 className="m-1 p-2 appearance-none text-gray-700 text-sm focus:outline-none"
                 placeholder="Введите телефон"
               />
               <button
                 type="button"
+                onClick={handleClick}
                 className="w-full m-1 p-2 text-sm bg-blue-700 rounded-lg font-semibold uppercase transition hover:border-blue-800 hover:bg-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-700 lg:w-auto"
               >
                 отправить
@@ -25,7 +41,6 @@ function Footer(): JSX.Element {
             </div>
           </div>
         </div>
-
         <hr className="h-px mt-6 bg-gray-700 border-none" />
 
         <div className="flex flex-col items-center justify-between mt-6 md:flex-row">
