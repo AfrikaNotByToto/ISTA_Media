@@ -8,9 +8,10 @@ const apiAuthRoute = require('./routes/auth.routes');
 const apiPostRoute = require('./routes/posts.routes');
 const apiReqRoute = require('./routes/req.routes');
 const apiNewsRoute = require('./routes/news.routes');
-const apiDescrRoute = require('./routes/description.routes');
 const apiEasyWeekRoute = require('./routes/easyweek.routes');
+const apiMail = require('./routes/mail.routes');
 const apiEmailForm = require('./routes/emailForm.routes');
+
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -21,8 +22,8 @@ app.use('/api/auth', apiAuthRoute);
 app.use('/api/posts', apiPostRoute);
 app.use('/api/requests', apiReqRoute);
 app.use('/api/news', apiNewsRoute);
-app.use('/api/about', apiDescrRoute);
 app.use('/api/easyweek', apiEasyWeekRoute);
+app.use('/api/mail', apiMail);
 app.use('/api/email', apiEmailForm);
 
 const start = async () => {

@@ -1,9 +1,10 @@
-import React from 'react';
-// import * as api from '../../App/api';
+import React, { useState } from 'react';
+import * as api from '../../App/api';
 
 function Modal(): JSX.Element {
-  // const [name, setName] = useState('');
-  // const [mail, setMail] = useState('');
+  const [name, setName] = useState('');
+  const [mail, setMail] = useState('');
+  const [error, setError] = useState(false);
 
   function toggleModal(): void {
     document.getElementById('modal')?.classList.toggle('hidden');
@@ -11,7 +12,14 @@ function Modal(): JSX.Element {
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
-    // api.({name, mail});
+    if (name && mail) {
+      api.sendEmail({ name, mail });
+      setName('');
+      setMail('');
+      document.getElementById('modal')?.classList.toggle('hidden');
+    } else {
+      setError(true);
+    }
   };
   return (
     <>
@@ -44,16 +52,19 @@ function Modal(): JSX.Element {
             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <label>Ваше имя</label>
               <input
-                // onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
+                value={name}
                 type="text"
                 className="w-full bg-gray-100 p-2 mt-2 mb-3"
               />
               <label>E-mail</label>
               <input
-                // onChange={(e) => setMail(e.target.value)}
+                onChange={(e) => setMail(e.target.value)}
+                value={mail}
                 type="text"
                 className="w-full bg-gray-100 p-2 mt-2 mb-3"
               />
+              {error && <span className="text-red-600">Заполните все поля</span>}
             </div>
             <div className="bg-gray-200 px-4 py-3 text-right">
               <button
