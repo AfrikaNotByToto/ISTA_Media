@@ -10,46 +10,51 @@ import Modal from '../Modal/Modal';
 export default function MainPage(): JSX.Element {
   return (
     <>
-      <div className="container" style={{ position: 'relative' }}>
+      <div
+        className="container text-center sm:text-left"
+        style={{ position: 'relative' }}
+      >
         <img
-          // className="bg-contain bg-center"
+          // className="flex"
           src="/img/4.png"
           alt=""
           style={{
-            height: '60%',
-            width: '60%',
-            marginLeft: '65%',
+            height: '50%',
+            width: '50%',
+            marginLeft: '50%',
             marginTop: '3%',
           }}
         />
         <h1
-          className="h11"
+          className="clients md:text-3xl mt-20  "
           style={{
             position: 'absolute',
-            top: '20%',
+            top: '8rem',
             left: '7%',
             color: 'black',
-            fontSize: '60px',
+            // fontSize: '3rem',
             fontWeight: 'bolder',
           }}
         >
           Ваши клиенты вас найдут
         </h1>
         <h5
+          className="md:text-base mt-20 "
           style={{
             position: 'absolute',
-            top: '50%',
+            top: '17rem',
             left: '7%',
             color: 'black',
-            fontSize: '30px',
+            // fontSize: '2rem',
           }}
         >
           сотрудничаем с застройщиками,
         </h5>
         <h5
+          className="md:text-base mt-20 absolute"
           style={{
-            position: 'absolute',
-            top: '60%',
+            // position: 'absolute',
+            top: '20rem',
             left: '7%',
             color: 'black',
             fontSize: '30px',

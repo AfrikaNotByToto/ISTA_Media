@@ -6,9 +6,9 @@ function CallBackForm(): JSX.Element {
       className=" container mx-auto px-4 py-14 sm:px-6 xl:px-12"
       style={{ marginTop: '600px' }}
     >
-      <span style={{ fontSize: '2rem', marginLeft: '25%' }}>
+      <h1 id="dermo" className="md:text-2xl ml-20 lg:text-3xl ml-30">
         Получите бесплатную консультация маркетолога
-      </span>
+      </h1>
       <br />
       <br />
       <br />
