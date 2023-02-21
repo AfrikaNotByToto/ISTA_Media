@@ -16,7 +16,7 @@ function PostList(): JSX.Element {
     <div>
       {posts ? (
         <div>
-          <div className="carousel carousel-center max-w-4/5 p-4 space-x-4 bg-neutral rounded-box">
+          <div style={{ display: 'grid', flexFlow: 'row wrap', gridTemplateColumns: 'repeat(3, 1fr)', margin: '2rem 1rem 1rem 14rem' }}>
             {posts.map((post) => (
               <SoloPost key={post.id} post={post} />
             ))}

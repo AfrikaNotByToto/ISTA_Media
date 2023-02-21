@@ -16,7 +16,7 @@ export default function AddDescription(): JSX.Element {
   };
   return (
     <center>
-      <div style={{ backgroundColor: 'white', border: 'black 2px solid', marginTop: '1rem' }} className="block  w-1/3 rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
+      <div>
         <h3 style={{ color: 'black', fontWeight: 'bold', fontSize: '20px' }}>Форма добавления о нас</h3>
         <form onSubmit={addedDescription}>
           <div className="relative mb-5 " data-te-input-wrapper-init>
