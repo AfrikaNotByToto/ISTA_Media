@@ -15,6 +15,7 @@ import Authorization from '../Components/auth/AuthForm';
 import AboutUs from '../Components/AboutUs/AboutUs';
 import { useAppDispatch } from '../store';
 import { checkUser } from '../Components/auth/authRegSlice';
+import Footer from '../Components/Footer/Footer';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -41,6 +42,7 @@ function App(): JSX.Element {
 
         {/* </Route> */}
       </Routes>
+      <Footer />
     </div>
   );
 }

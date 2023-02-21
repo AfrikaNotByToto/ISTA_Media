@@ -2,8 +2,8 @@ import React from 'react';
 
 function Footer(): JSX.Element {
   return (
-    <footer className="flex justify-center px-4 text-gray-100 bg-black">
-      <div className="container py-6">
+    <footer className="flex justify-center px-2 text-gray-100 bg-black">
+      <div className="container py-3">
         <h1 className="text-center text-lg font-bold lg:text-xl">
           Свяжитесь с нами <br />
         </h1>

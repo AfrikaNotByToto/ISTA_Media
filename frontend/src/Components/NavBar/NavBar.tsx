@@ -13,8 +13,8 @@ export default function NavBar(): JSX.Element {
     dispatch(LogoutCheck());
   };
   return (
-    <>
-      <div className="flex container-fluid flex-auto flex-wrap items-center justify-between py-8 mx-auto">
+    <div style={{ backgroundColor: 'black' }}>
+      <div className="flex container flex-auto flex-wrap items-center justify-between mx-auto">
         <nav className="flex-auto py-3 bg-black text-white shadow-lg navbar navbar-expand-lg navbar-light">
           <NavLink className="text-xl text-white" to="/">
             <img src="/img/2023-02-16 16.27.36.jpg" style={{ height: '30px' }} alt="" />
@@ -137,6 +137,6 @@ export default function NavBar(): JSX.Element {
         </style>
       </div>
       <Outlet />
-    </>
+    </div>
   );
 }
