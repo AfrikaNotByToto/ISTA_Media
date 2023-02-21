@@ -21,33 +21,6 @@ function Authorization(): JSX.Element {
   };
   return (
 
-    // <div className="form__container">
-    //   <form
-    //     onSubmit={login}
-    //     className="form__body"
-    //     style={{ display: 'flex', flexDirection: 'column' }}
-    //   >
-    //     <label htmlFor="type">Логин</label>
-    //     <input
-    //       id="type"
-    //       name="userName"
-    //       type="text"
-    //       value={userName}
-    //       onChange={(e) => setUserName(e.target.value)}
-    //     />
-    //     <label htmlFor="img">Password</label>
-    //     <input
-    //       id="img"
-    //       name="password"
-    //       type="text"
-    //       value={password}
-    //       onChange={(e) => setPassword(e.target.value)}
-    //     />
-
-    //     <button type="submit">Авторизироваться</button>
-    //     <h2>{message}</h2>
-    //   </form>
-    // </div>
     <center>
       <div style={{ marginTop: '10rem' }} className="w-full max-w-lg ">
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={login}>
@@ -84,7 +57,7 @@ function Authorization(): JSX.Element {
           </div>
           <div className="flex flex-col items-center">
 
-            <button className="bg-black hover:bg-blue-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            <button className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800" type="submit">
               Войти
             </button>
 

@@ -23,7 +23,7 @@ export default function NavBar(): JSX.Element {
               <>
                 <NavLink className="text-xl text-white" to="/adminPage">
                   <img
-                    src="/img/2023-02-16 16.27.36.jpg"
+                    src="https://png.pngtree.com/element_our/20200610/ourmid/pngtree-character-default-avatar-image_2237203.jpg"
                     style={{ height: '30px' }}
                     alt=""
                   />
@@ -32,7 +32,7 @@ export default function NavBar(): JSX.Element {
                   className="flex space-evenly "
                   style={{ width: '25%', justifyContent: 'space-between' }}
                 >
-                  <div>Admin Panel</div>
+                  <div style={{ fontWeight: 'bold', fontSize: '20px', color: '#1d4ed8' }}>Admin Panel</div>
                   <NavLink className="text-xl text-white" to="/registration">
                     <div>Регистрация</div>
                   </NavLink>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { RootState, useAppDispatch } from '../../store';
 import { registrUser } from './authRegSlice';
 
@@ -8,45 +8,19 @@ function Registration(): JSX.Element {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useAppDispatch();
-  const nav = useNavigate();
+  // const nav = useNavigate();
   const { user, message } = useSelector((store: RootState) => store.users);
   console.log(user);
-  useEffect(() => {
-    if ('userName' in user) {
-      nav('/adminPage');
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if ('userName' in user) {
+  //     nav('/adminPage');
+  //   }
+  // }, [user]);
   const registr = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     dispatch(registrUser({ userName, password }));
   };
   return (
-    // <div className="form__container">
-    //   <form
-    //     className="form__body"
-    //     style={{ display: 'flex', flexDirection: 'column' }}
-    //     onSubmit={registr}
-    //   >
-    //     <label htmlFor="name">userName</label>
-    //     <input
-    //       id="name"
-    //       name="userName"
-    //       type="text"
-    //       value={userName}
-    //       onChange={(e) => setUserName(e.target.value)}
-    //     />
-    //     <label htmlFor="password">Password</label>
-    //     <input
-    //       id="password"
-    //       name="password"
-    //       type="password"
-    //       value={password}
-    //       onChange={(e) => setPassword(e.target.value)}
-    //     />
-    //     <button type="submit">Зарегистрироваться</button>
-    //     <h2>{message}</h2>
-    //   </form>
-    // </div>
 
     <center>
       <div style={{ marginTop: '10rem' }} className="w-full max-w-lg ">
@@ -84,7 +58,7 @@ function Registration(): JSX.Element {
           </div>
           <div className="flex flex-col items-center">
 
-            <button className="bg-black hover:bg-blue-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            <button className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800" type="submit">
               Зарегистрироваться
             </button>
 
