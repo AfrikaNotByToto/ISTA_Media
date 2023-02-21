@@ -4,10 +4,21 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {
-      boxShadow: {
-        '2cxl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
-      },
+    screens: {
+      sm: '640px',
+      // => @media (min-width: 640px) {...}
+
+      md: '800px',
+      // => @media (min-width: 800px) {...}
+
+      lg: '1024px',
+      // => @media (min-width: 1024px) {...}
+
+      xl: '1280px',
+      // => @media (min-width: 1280px) {...}
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) {...}
     },
   },
   plugins: [require('daisyui')],

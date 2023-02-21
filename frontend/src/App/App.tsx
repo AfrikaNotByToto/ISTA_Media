@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+// import 'normalize.css';
 
 import NavBar from '../Components/NavBar/NavBar';
 
@@ -23,7 +24,7 @@ function App(): JSX.Element {
     dispatch(checkUser());
   }, []);
   return (
-    <div>
+    <div className="w-full">
       <NavBar />
       {/* <Route path="/" element={<NavBar />}> */}
 

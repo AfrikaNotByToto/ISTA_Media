@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useAppDispatch } from '../../store';
+import { addPhones } from './FooterSlice';
 
 function Footer(): JSX.Element {
+  const [phone, setPhone] = useState('');
+  const dispatch = useAppDispatch();
+
+  const addedPhone = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    dispatch(addPhones({ phone }));
+    setPhone('');
+  };
   return (
-    <footer className="flex justify-center px-4 text-gray-100 bg-black">
-      <div className="container py-6">
+    <footer className="flex justify-center px-2 text-gray-100 bg-black">
+      <div className="container py-3">
         <h1 className="text-center text-lg font-bold lg:text-xl">
           Свяжитесь с нами <br />
         </h1>
@@ -11,17 +21,24 @@ function Footer(): JSX.Element {
         <div className="flex justify-center mt-6">
           <div className="bg-white rounded-lg">
             <div className="flex flex-wrap justify-between md:flex-row">
-              <input
-                type="phone"
-                className="m-1 p-2 appearance-none text-gray-700 text-sm focus:outline-none"
-                placeholder="Введите телефон"
-              />
-              <button
-                type="button"
-                className="w-full m-1 p-2 text-sm bg-blue-700 rounded-lg font-semibold uppercase transition hover:border-blue-800 hover:bg-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-700 lg:w-auto"
-              >
-                отправить
-              </button>
+              <form onSubmit={addedPhone}>
+                <input
+                  type="tel"
+                  className="m-1 p-2 appearance-none text-gray-700 text-sm focus:outline-none"
+                  placeholder="89999999999"
+                  pattern="[0-9]{11}"
+                  value={phone}
+                  onChange={(e) => {
+                    setPhone(e.target.value);
+                  }}
+                />
+                <button
+                  type="submit"
+                  className="w-full m-1 p-2 text-sm bg-blue-700 rounded-lg font-semibold uppercase transition hover:border-blue-800 hover:bg-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-700 lg:w-auto"
+                >
+                  отправить
+                </button>
+              </form>
             </div>
           </div>
         </div>
