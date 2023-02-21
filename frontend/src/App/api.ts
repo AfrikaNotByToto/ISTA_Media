@@ -2,6 +2,7 @@ import { Post, PostId } from '../Components/Posts/Types/types';
 import { Request } from '../Components/Requests/Types/types';
 import { CheckList } from '../Components/Modal/Types/type';
 import { OneNews, NewsId } from '../Components/News/Types/types';
+import { Emailform } from '../Components/CallBackFom/Types/types';
 
 export const loadPosts = async (): Promise<Post[]> => {
   const res = await fetch('http://localhost:4000/api/posts');
@@ -114,15 +115,31 @@ export const updateNews = async (oneNews: OneNews): Promise<OneNews> => {
   return res.json();
 };
 
+
 export const sendEmail = async (checkList: CheckList): Promise<void> => {
   const res = await fetch('http://localhost:4000/api/mail', {
     method: 'post',
+     headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+    name: checkList.name,
+      mail: checkList.mail
+        }),
+  });
+  return res.json();
+};
+
+
+export const addEmail = async (newEmail: Emailform): Promise<Emailform> => {
+  const res = await fetch('http://localhost:4000/api/email', {
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      name: checkList.name,
-      mail: checkList.mail
+      id: newEmail.id,
+      email: newEmail.email,
     }),
   });
   return res.json();

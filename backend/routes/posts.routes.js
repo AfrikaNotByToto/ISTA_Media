@@ -23,7 +23,6 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const { img, title, description } = req.body;
-    console.log(req.body);
     const Posts = await Post.create({
       img,
       title,
