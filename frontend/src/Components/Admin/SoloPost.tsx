@@ -18,7 +18,7 @@ function SoloPost({ post }: { post: Post }): JSX.Element {
       {modal && <UpdatedPost open={open} post={post} />}
 
       <div
-        style={{ height: '500px', width: '450px' }}
+        style={{ height: '350px', width: '270px' }}
         className="max-w-sm rounded overflow-hidden "
       >
         <center>
@@ -29,7 +29,7 @@ function SoloPost({ post }: { post: Post }): JSX.Element {
             >
               <center>
                 <img
-                  style={{ width: '250px', height: '250px', marginTop: '1rem' }}
+                  style={{ width: '150px', height: '150px', marginTop: '1rem' }}
                   className="rounded-t-lg"
                   src={post.img}
                   alt=""
@@ -45,16 +45,16 @@ function SoloPost({ post }: { post: Post }): JSX.Element {
                 <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                   {post.description}
                 </p>
-                <div className="flex justify-evenly">
+                <div>
                   <button
-                    className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
+                    className="shadow-2xl py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
                     onClick={del}
                     type="button"
                   >
                     Удалить
                   </button>
                   <button
-                    className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
+                    className="shadow-2xl py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
                     onClick={open}
                     type="button"
                   >

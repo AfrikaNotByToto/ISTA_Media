@@ -16,11 +16,11 @@ function PostList(): JSX.Element {
     <div>
       {posts ? (
         <div>
-          <div style={{ display: 'grid', flexFlow: 'row wrap', gridTemplateColumns: 'repeat(3, 1fr)', margin: '2rem 1rem 1rem 14rem' }}>
-            {posts.map((post) => (
-              <SoloPost key={post.id} post={post} />
-            ))}
-          </div>
+
+          {posts.map((post) => (
+            <SoloPost key={post.id} post={post} />
+          ))}
+
         </div>
       ) : (
         <>

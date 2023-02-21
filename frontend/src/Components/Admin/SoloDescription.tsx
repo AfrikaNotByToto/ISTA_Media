@@ -23,8 +23,8 @@ export default function DescriptionSolo({
       {modal && <UpdatedDescription open={open} description={description} />}
       <div
         style={{
-          height: '450px',
-          width: '450px',
+          height: '420px',
+          width: '350px',
           border: '1px black solid',
           marginBottom: '1rem',
         }}
@@ -46,14 +46,14 @@ export default function DescriptionSolo({
         </center>
         <div className="flex justify-evenly">
           <button
-            className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
+            className="shadow-2xl py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
             onClick={del}
             type="button"
           >
             Удалить
           </button>
           <button
-            className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
+            className="shadow-2xl py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
             onClick={open}
             type="button"
           >
