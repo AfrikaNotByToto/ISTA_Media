@@ -2,6 +2,7 @@ import { Post, PostId } from '../Components/Posts/Types/types';
 import { Request } from '../Components/Requests/Types/types';
 import { OneNews, NewsId } from '../Components/News/Types/types';
 import { Emailform } from '../Components/CallBackFom/Types/types';
+import { PhoneForm } from '../Components/Footer/Types/types';
 
 export const loadPosts = async (): Promise<Post[]> => {
   const res = await fetch('http://localhost:4000/api/posts');
@@ -125,6 +126,20 @@ export const addEmail = async (newEmail: Emailform): Promise<Emailform> => {
     body: JSON.stringify({
       id: newEmail.id,
       email: newEmail.email,
+    }),
+  });
+  return res.json();
+};
+
+export const addPhone = async (newPhone: PhoneForm): Promise<PhoneForm> => {
+  const res = await fetch('http://localhost:4000/api/phone', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      id: newPhone.id,
+      phone: newPhone.phone,
     }),
   });
   return res.json();
