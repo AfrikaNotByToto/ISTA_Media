@@ -18,7 +18,8 @@ function SoloPost({ post }: { post: Post }): JSX.Element {
       {modal && <UpdatedPost open={open} post={post} />}
 
       <div
-        className="max-w-sm rounded overflow-hidden shadow-lg"
+        style={{ height: '500px', width: '450px' }}
+        className="max-w-sm rounded overflow-hidden "
       >
         <center>
 
@@ -44,7 +45,7 @@ function SoloPost({ post }: { post: Post }): JSX.Element {
                 <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                   {post.description}
                 </p>
-                <div className="flex justify-between">
+                <div className="flex justify-evenly">
                   <button
                     className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
                     onClick={del}
