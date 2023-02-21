@@ -11,6 +11,7 @@ const apiNewsRoute = require('./routes/news.routes');
 const apiDescrRoute = require('./routes/description.routes');
 const apiEasyWeekRoute = require('./routes/easyweek.routes');
 const apiEmailForm = require('./routes/emailForm.routes');
+const apiPhoneForm = require('./routes/phoneForm.routes');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -24,6 +25,7 @@ app.use('/api/news', apiNewsRoute);
 app.use('/api/about', apiDescrRoute);
 app.use('/api/easyweek', apiEasyWeekRoute);
 app.use('/api/email', apiEmailForm);
+app.use('/api/phone', apiPhoneForm);
 
 const start = async () => {
   try {
