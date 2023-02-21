@@ -25,7 +25,7 @@ export default function NavBar(): JSX.Element {
             <>
               <NavLink className="text-xl text-white" to="/adminPage">
                 <img
-                  src="/img/2023-02-16 16.27.36.jpg"
+                  src="/img/"
                   style={{ height: '30px' }}
                   alt=""
                 />
