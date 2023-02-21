@@ -15,7 +15,7 @@ function PostList(): JSX.Element {
   return (
     <div>
       {posts ? (
-        <div>
+        <div className="grid grid-cols-3 gap-3 justify-center" style={{ marginLeft: '7rem' }}>
 
           {posts.map((post) => (
             <SoloPost key={post.id} post={post} />

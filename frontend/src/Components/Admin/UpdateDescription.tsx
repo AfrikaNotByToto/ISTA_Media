@@ -27,7 +27,7 @@ export default function UpdatedDescription({
   return (
 
     <div
-      className="block max-w-sm rounded-lg bg-white p-20 shadow-lg dark:bg-neutral-700"
+      className="block max-w-lg rounded-lg bg-white p-2 shadow-lg dark:bg-neutral-700"
     >
       <form onSubmit={updatedDescriptionOne}>
         <center>

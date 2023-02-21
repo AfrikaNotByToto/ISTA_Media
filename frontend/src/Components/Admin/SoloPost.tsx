@@ -18,7 +18,7 @@ function SoloPost({ post }: { post: Post }): JSX.Element {
       {modal && <UpdatedPost open={open} post={post} />}
 
       <div
-        style={{ height: '350px', width: '270px' }}
+        style={{ height: 'auto', width: '350px', marginTop: '1rem', marginBottom: '2rem' }}
         className="max-w-sm rounded overflow-hidden "
       >
         <center>
@@ -42,9 +42,11 @@ function SoloPost({ post }: { post: Post }): JSX.Element {
                 >
                   {post.title}
                 </h5>
-                <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+
+                <span className="mb-8 text-base text-neutral-600 dark:text-neutral-200">
                   {post.description}
-                </p>
+                </span>
+
                 <div>
                   <button
                     className="shadow-2xl py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"

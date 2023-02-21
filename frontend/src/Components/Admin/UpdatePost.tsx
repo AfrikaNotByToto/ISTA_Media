@@ -28,7 +28,7 @@ export default function UpdatedPost({
   return (
 
     <div
-      className="block max-w-sm rounded-lg bg-white p-20 shadow-lg dark:bg-neutral-700"
+      className="block max-w-sm rounded-lg bg-white p-5 shadow-lg dark:bg-neutral-700"
     >
       <form onSubmit={updatedPost}>
         <center>
