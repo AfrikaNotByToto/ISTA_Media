@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useAppDispatch } from '../../store';
+import { addEmailss } from './CallbackSlice';
 
 function CallBackForm(): JSX.Element {
+  const [email, setEmail] = useState('');
+  const dispatch = useAppDispatch();
+
+  const addedEmail = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    dispatch(addEmailss({ email }));
+    setEmail('');
+  };
   return (
     <div
       className=" container mx-auto px-4 py-14 sm:px-6 xl:px-12"
@@ -13,12 +23,17 @@ function CallBackForm(): JSX.Element {
       <br />
       <br />
       <div className="flex flex-col items-center justify-center space-y-6 text-center">
-        <form className="flex w-4/6 max-w-full flex-col items-center space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3">
+        <form
+          className="flex w-4/6 max-w-full flex-col items-center space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3"
+          onSubmit={addedEmail}
+        >
           <input
+            name="email"
             type="email"
             className="w-full rounded-md border bg-gray-50 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
             placeholder="y@yandex.ru"
-            value=""
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <button
             type="submit"
