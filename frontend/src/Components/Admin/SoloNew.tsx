@@ -16,29 +16,43 @@ function NewsSolo({ oneNews }: { oneNews: OneNews }): JSX.Element {
   return (
     <>
       {modal && <UpdatedNew open={open} oneNews={oneNews} />}
-      <div className="card lg:card-side bg-base-100 shadow-xl">
-        <figure>
-          <img src={oneNews.img} alt="Album" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">{oneNews.title}</h2>
-          <p>{oneNews.description}</p>
-        </div>
-        <div className="flex-col">
-          <button
-            onClick={del}
-            type="button"
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold rounded resize-y"
-          >
-            Delete
-          </button>
-          <button
-            onClick={open}
-            type="button"
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold rounded wd-40 h-5"
-          >
-            Update
-          </button>
+      <div className="flex justify-center">
+        <div
+          className="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700"
+        >
+          <a href="#!">
+            <img
+              className="rounded-t-lg"
+              src={oneNews.img}
+              alt=""
+            />
+          </a>
+          <div className="p-6">
+            <h5
+              className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+            >
+              {oneNews.title}
+            </h5>
+            <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+              {oneNews.description}
+            </p>
+            <div className="flex justify-evenly">
+              <button
+                className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
+                onClick={del}
+                type="button"
+              >
+                Удалить
+              </button>
+              <button
+                className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
+                onClick={open}
+                type="button"
+              >
+                Редактировать
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </>

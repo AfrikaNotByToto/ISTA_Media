@@ -23,12 +23,12 @@ export default function DescriptionSolo({
       {modal && <UpdatedDescription open={open} description={description} />}
       <div
         style={{
-          height: '370px',
-          width: '300px',
-          border: '1px white solid',
+          height: '420px',
+          width: '350px',
+          border: '1px black solid',
           marginBottom: '1rem',
         }}
-        className="max-w-sm rounded overflow-hidden shadow-lg"
+        className="max-w-sm rounded overflow-hidden "
       >
         <center>
           <img
@@ -44,20 +44,20 @@ export default function DescriptionSolo({
             </div>
           </div>
         </center>
-        <div className="flex-col">
+        <div className="flex justify-evenly">
           <button
+            className="shadow-2xl py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
             onClick={del}
             type="button"
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold rounded resize-y"
           >
-            Delete
+            Удалить
           </button>
           <button
+            className="shadow-2xl py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
             onClick={open}
             type="button"
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold rounded wd-40 h-5"
           >
-            Update
+            Редактировать
           </button>
         </div>
       </div>
