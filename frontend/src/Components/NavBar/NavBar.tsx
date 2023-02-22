@@ -13,7 +13,7 @@ export default function NavBar(): JSX.Element {
     dispatch(LogoutCheck());
   };
   return (
-    <div style={{ backgroundColor: 'black' }}>
+    <div className="sticky top-0" style={{ backgroundColor: 'black' }}>
       <div className="flex container flex-auto flex-wrap items-center justify-between mx-auto">
         <nav className="flex-auto py-3 bg-black text-white shadow-lg navbar navbar-expand-lg navbar-light">
           <NavLink className="text-xl text-white" to="/">
@@ -83,19 +83,19 @@ export default function NavBar(): JSX.Element {
                       className="border-b border-gray-400 my-8 uppercase "
                       style={{ color: 'black' }}
                     >
-                      <a href="/about">About</a>
+                      <a href="/about">О нас</a>
                     </li>
                     <li
                       className="border-b border-gray-400 my-8 uppercase"
                       style={{ color: 'black' }}
                     >
-                      <a href="/portfolio">Portfolio</a>
+                      <a href="/cases">Кейсы</a>
                     </li>
                     <li
                       className="border-b border-gray-400 my-8 uppercase"
                       style={{ color: 'black' }}
                     >
-                      <a href="/contact">Contact</a>
+                      <a href="/news">Новости</a>
                     </li>
                   </ul>
                 </div>

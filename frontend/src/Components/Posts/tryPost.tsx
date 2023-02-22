@@ -6,8 +6,15 @@ import { Post } from './Types/types';
 export default function TryPost({ state }: { state: Post[] }): JSX.Element {
   return (
     <center>
-      <div style={{ marginLeft: '5rem', marginRight: '5rem', marginTop: '20rem' }}>
-        <div className="carousel carousel-center w-full p-4 space-x-4 bg-black rounded-box">
+      <div
+        style={{
+          marginLeft: '5rem',
+          marginRight: '5rem',
+          marginTop: '10rem',
+          marginBottom: '10rem',
+        }}
+      >
+        <div className="carousel carousel-center w-full p-4 space-x-4 bg-white rounded-box">
           {state.map((post) => (
             <PostCard key={post.id} post={post} />
           ))}
