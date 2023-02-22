@@ -26,19 +26,11 @@ function Registration(): JSX.Element {
       nav('/adminPage');
     }
   };
-  // useLayoutEffect(() => {
-  //   if (messages === 'Вы успешно зарегистрировались, нажмите еще раз чтобы перейти') {
-  //     nav('/adminPage');
-  //     window.location.reload();
-  //   }
-  // }, [nav, messages]);
+
   return (
     <center>
-      <div style={{ marginTop: '10rem' }} className="w-full max-w-lg ">
-        <form
-          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-          onSubmit={registr}
-        >
+      <div style={{ margin: '10rem 0 13rem 0' }} className="w-full max-w-lg ">
+        <form className="bg-white rounded px-8" onSubmit={registr}>
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"

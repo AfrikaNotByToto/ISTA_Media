@@ -21,8 +21,8 @@ function Authorization(): JSX.Element {
   };
   return (
     <center>
-      <div style={{ marginTop: '10rem' }} className="w-full max-w-lg ">
-        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={login}>
+      <div style={{ margin: '10rem 0 10rem 0' }} className="w-full max-w-lg ">
+        <form className="bg-white rounded px-8 pt-6 pb-8 mb-4" onSubmit={login}>
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
