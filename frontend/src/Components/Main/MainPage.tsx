@@ -5,7 +5,7 @@ export default function MainPage(): JSX.Element {
   return (
     <>
       <img
-        style={{ position: 'absolute', height: '700px', right: '0' }}
+        style={{ position: 'absolute', height: '700px', right: '0', marginTop: '3rem' }}
         src="/img/4.png"
         alt=""
       />

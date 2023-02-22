@@ -15,7 +15,7 @@ module.exports = {
         userId: 1,
       },
       {
-        img: 'https://images.ctfassets.net/0gqf8nju6pz6/3w36aYvCCihRoxvfhd5c32/dd185cb2b5bb97153c6feed640262693/real-estate-asset-classes-hero.jpeg',
+        img: 'https://guardian.ng/wp-content/uploads/2020/06/real-estate.jpg',
         title: 'Создание очереди лидов для застройщика на 3 новых ЖК',
         description: 'Цель: построить очередь заявок на покупку квартир в ипотеку в новых ЖК. Итоги: 11 работающих связок, реклама нескольких ЖК вместе по ЦА - конверсия с лендингов повысилась на 20%, получено 153 теплых лида по цене 1300р/лид',
         userId: 1,

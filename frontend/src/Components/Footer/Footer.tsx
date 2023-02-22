@@ -19,7 +19,7 @@ function Footer(): JSX.Element {
 
   return (
     <footer className="flex justify-center px-2 text-gray-100 bg-black">
-      <div className="container py-3">
+      <div className="container py-5">
         <h1 className="text-center text-lg font-bold lg:text-xl">
           Свяжитесь с нами <br />
         </h1>
