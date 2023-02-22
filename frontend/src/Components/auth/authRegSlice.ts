@@ -6,6 +6,7 @@ import { State, User } from './Types/types';
 const initialState: State = {
   user: {},
   message: undefined,
+  messages: undefined,
 };
 
 export const registrUser = createAsyncThunk('user/registr', (newUser: User) =>
@@ -28,11 +29,11 @@ const userSlice = createSlice({
         if (action.payload.user) {
           state.user = action.payload.user;
         } else {
-          state.message = action.payload.message;
+          state.messages = action.payload.messages;
         }
       })
       .addCase(registrUser.rejected, (state, action) => {
-        state.message = action.error.message;
+        state.messages = action.error.message;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         if (action.payload.user) {

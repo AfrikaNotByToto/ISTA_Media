@@ -8,7 +8,7 @@ function Registration(): JSX.Element {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useAppDispatch();
-  const { message } = useSelector((store: RootState) => store.users);
+  const { messages } = useSelector((store: RootState) => store.users);
 
   const registr = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
@@ -64,7 +64,7 @@ function Registration(): JSX.Element {
               Зарегистрироваться
             </button>
 
-            <h2>{message}</h2>
+            <h2>{messages}</h2>
           </div>
         </form>
       </div>
