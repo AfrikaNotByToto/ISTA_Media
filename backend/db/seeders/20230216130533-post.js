@@ -2,10 +2,10 @@ module.exports = {
   async up(queryInterface) {
     const setPosts = [
       {
-        img: 'https://sun9-17.userapi.com/lM9MMJ8kaFtxBh2xa4j6t9HxOz6W6ck9QwXr2w/Lkx_XDJx04E.jpg',
-        title: 'Большое агентство в большом городе',
+        img: 'https://img.staticmb.com/mbcontent//images/uploads/2023/1/real-estate.jpg',
+        title: 'Риэлторское агентсво - создание очереди заявок',
         description:
-          'Ребрендинг, повышение кликабельности сайта, увеличение аудитории',
+          'Создали профиль агентства в Instagram *(принадлежит экстремисткой организации Meta, запрещенной в РФ). Через связку Instagram* - креатив - посадочная страница - форма для обратной связи получен 301 лид из которых 70% - целевые. Медианная цена заявки - 143 рубля. ',
         userId: 1,
       },
       {
