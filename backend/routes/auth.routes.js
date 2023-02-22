@@ -25,20 +25,19 @@ router.post('/sign-in', async (req, res) => {
   try {
     const { userName, password } = req.body;
     const checkUserName = await User.findOne({ where: { userName } });
-    const checkPassword = await bcrypt.compare(
-      password,
-      checkUserName.password
-    );
-    if (!userName && !password) {
+    if (userName === '' && password === '') {
       return res.status(403).json({ message: 'Нужно заполнить все поля' });
-    }
-    if (!checkPassword) {
-      return res.status(403).json({ message: 'Логин или пароль не верны' });
     }
     if (!checkUserName) {
       return res.status(404).json({ message: 'Логин или пароль не верны' });
     }
-
+    const checkPassword = await bcrypt.compare(
+      password,
+      checkUserName.password
+    );
+    if (!checkPassword) {
+      return res.status(403).json({ message: 'Логин или пароль не верны' });
+    }
     const user = {
       id: checkUserName.id,
       userName: checkUserName.userName,
@@ -46,7 +45,7 @@ router.post('/sign-in', async (req, res) => {
     req.session.userId = checkUserName.id;
     res.status(200).json({ user });
   } catch (message) {
-    res.status(500).json({ message: 'Заполните все поля' });
+    res.status(500).json({ message: 'Failed to fetch' });
   }
 });
 
@@ -54,14 +53,14 @@ router.post('/sign-up', async (req, res) => {
   try {
     const { userName, password } = req.body;
     const CheckUser = await User.findOne({ where: { userName } });
-
-    if (CheckUser) {
-      return res.status(403).json({ message: 'Пользователь уже существует' });
-    }
-    if (!userName || !password) {
-      res.status(403).json({ message: 'Заполните все поля' });
+    if (userName === '' && password === '') {
+      res.status(403).json({ messages: 'Заполните все поля' });
       return;
     }
+    if (CheckUser) {
+      return res.status(403).json({ messages: 'Пользователь уже существует' });
+    }
+
     const hash = await bcrypt.hash(password, 10);
     const newUser = await User.create({
       userName,
@@ -71,10 +70,15 @@ router.post('/sign-up', async (req, res) => {
       id: newUser.id,
       userName: newUser.userName,
     };
-    req.session.userId = user.id;
-    res.status(201).json({ user });
-  } catch (message) {
-    res.json({ message: 'Заполните все поля' });
+    res
+      .status(201)
+      .json({
+        messages:
+          'Вы успешно зарегистрировались, нажмите еще раз чтобы перейти',
+        user,
+      });
+  } catch (messages) {
+    res.json({ messages: 'Failed to fetch' });
   }
 });
 

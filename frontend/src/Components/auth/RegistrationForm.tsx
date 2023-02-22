@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { RootState, useAppDispatch } from '../../store';
 import { registrUser } from './authRegSlice';
 
@@ -8,12 +8,30 @@ function Registration(): JSX.Element {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useAppDispatch();
-  const { message } = useSelector((store: RootState) => store.users);
-
+  const { messages } = useSelector((store: RootState) => store.users);
+  const nav = useNavigate();
   const registr = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     dispatch(registrUser({ userName, password }));
   };
+
+  const ref = (): void => {
+    if (
+      messages !== 'Заполните все поля' &&
+      messages !== 'Пользователь уже существует' &&
+      messages !== 'Failed to fetch' &&
+      messages !== undefined &&
+      messages === 'Вы успешно зарегистрировались, нажмите еще раз чтобы перейти'
+    ) {
+      nav('/adminPage');
+    }
+  };
+  useLayoutEffect(() => {
+    if (messages === 'Вы успешно зарегистрировались, нажмите еще раз чтобы перейти') {
+      nav('/adminPage');
+      window.location.reload();
+    }
+  }, [nav, messages]);
   return (
     <center>
       <div style={{ marginTop: '10rem' }} className="w-full max-w-lg ">
@@ -35,7 +53,7 @@ function Registration(): JSX.Element {
               type="text"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
-              style={{ color: 'white' }}
+              style={{ color: 'black' }}
             />
           </div>
           <div className="mb-6">
@@ -53,18 +71,19 @@ function Registration(): JSX.Element {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="*********"
-              style={{ color: 'white' }}
+              style={{ color: 'black' }}
             />
           </div>
           <div className="flex flex-col items-center">
             <button
               className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
               type="submit"
+              onClick={ref}
             >
               Зарегистрироваться
             </button>
 
-            <h2>{message}</h2>
+            <h2>{messages}</h2>
           </div>
         </form>
       </div>
