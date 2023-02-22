@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { RootState, useAppDispatch } from '../../store';
@@ -26,12 +26,12 @@ function Registration(): JSX.Element {
       nav('/adminPage');
     }
   };
-  useLayoutEffect(() => {
-    if (messages === 'Вы успешно зарегистрировались, нажмите еще раз чтобы перейти') {
-      nav('/adminPage');
-      window.location.reload();
-    }
-  }, [nav, messages]);
+  // useLayoutEffect(() => {
+  //   if (messages === 'Вы успешно зарегистрировались, нажмите еще раз чтобы перейти') {
+  //     nav('/adminPage');
+  //     window.location.reload();
+  //   }
+  // }, [nav, messages]);
   return (
     <center>
       <div style={{ marginTop: '10rem' }} className="w-full max-w-lg ">

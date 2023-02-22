@@ -5,7 +5,7 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     const setDescriptions = [
       {
-        img: 'https://static.vecteezy.com/system/resources/previews/002/206/219/original/advertising-icon-free-vector.jpg',
+        img: 'https://avatars.mds.yandex.net/i?id=e36c21bd39088556c83afedba8e0fa50-5289271-images-thumbs&n=13',
        body: 'Контекстная и таргетированная реклама',
         userId: 1,
       },

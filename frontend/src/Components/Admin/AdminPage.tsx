@@ -18,7 +18,7 @@ export default function AdminPage(): JSX.Element {
           style={{
             backgroundColor: 'white',
             border: 'black 1px solid',
-            marginTop: '1rem',
+            marginTop: '7rem',
             marginBottom: '3rem',
             marginLeft: '1rem',
             marginRight: '1rem',
