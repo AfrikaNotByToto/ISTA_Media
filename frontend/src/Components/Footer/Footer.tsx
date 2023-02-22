@@ -57,12 +57,7 @@ function Footer(): JSX.Element {
               src="/img/2023-02-16 16.27.36.jpg"
               alt="logo"
             />
-            <a className="px-2 text-sm">2021 ©</a>
-          </div>
-          <div className="flex mt-4 md:m-0">
-            <div className="-mx-4">
-              <a className="px-8 text-lg">ista@gmail.com</a>
-            </div>
+            <a className="px-2 text-sm">ista@gmail.com</a>
           </div>
         </div>
       </div>

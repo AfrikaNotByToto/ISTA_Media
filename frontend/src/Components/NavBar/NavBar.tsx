@@ -18,14 +18,14 @@ export default function NavBar(): JSX.Element {
       <div className="flex container flex-auto flex-wrap items-center justify-between mx-auto">
         <nav className="flex-auto py-3 bg-black text-white shadow-lg navbar navbar-expand-lg navbar-light">
           <NavLink className="text-xl text-white" to="/">
-            <img src="https://png.pngtree.com/element_our/20200610/ourmid/pngtree-character-default-avatar-image_2237203.jpg" style={{ height: '30px' }} alt="" />
+            <img src="/img/2023-02-16 16.27.36.jpg" style={{ height: '30px' }} alt="logo" />
           </NavLink>
 
           {'id' in user ? (
             <>
               <NavLink className="text-xl text-white" to="/adminPage">
                 <img
-                  src="/img/"
+                  src="https://png.pngtree.com/element_our/20200610/ourmid/pngtree-character-default-avatar-image_2237203.jpg"
                   style={{ height: '30px' }}
                   alt=""
                 />
