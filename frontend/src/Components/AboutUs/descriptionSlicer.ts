@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import * as api from '../../App/apiDescr';
+import * as api from '../../App/api/apiDescr';
 import { Description, DescriptionId, State } from './Types/type';
 
 const initialState: State = {
