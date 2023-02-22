@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 
 const db = require('./db/models');
@@ -17,6 +18,9 @@ const apiAboutUs = require('./routes/description.routes');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+const buildDir = path.join(__dirname, '../frontend/build');
+app.use(express.static(buildDir));
+
 config(app);
 
 app.use('/api/auth', apiAuthRoute);
@@ -28,6 +32,10 @@ app.use('/api/email', apiEmailForm);
 app.use('/api/telegram', apiTelegram);
 app.use('/api/phone', apiPhoneForm);
 app.use('/api/about', apiAboutUs);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
+});
 
 const start = async () => {
   try {
