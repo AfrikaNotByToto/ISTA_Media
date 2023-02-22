@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as api from '../../App/api/api';
+import { sendMessageTelegram } from '../../App/api/apiPhone';
 
 import { useAppDispatch } from '../../store';
 import { addPhones } from './FooterSlice';
@@ -12,7 +12,7 @@ function Footer(): JSX.Element {
     e.preventDefault();
     if (phone) {
       dispatch(addPhones({ phone }));
-      api.sendMessageTelegram({ msg: phone });
+      sendMessageTelegram({ msg: phone });
       setPhone('');
     }
   };
