@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import * as api from '../../App/api/api';
+import * as api from '../../App/api/apiNews';
 import { State, OneNews, NewsId } from './Types/types';
 
 const initialState: State = {
