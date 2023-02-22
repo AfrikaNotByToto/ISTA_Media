@@ -10,16 +10,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
-  try {
-    const { id } = req.params;
-    const oneDescription = await Description.findOne({ where: { id } });
-    res.json(oneDescription);
-  } catch ({ message }) {
-    res.status(500).json(message);
-  }
-});
-
 router.post('/', async (req, res) => {
   try {
     const { img, body } = req.body;
@@ -28,7 +18,6 @@ router.post('/', async (req, res) => {
       body,
       userId: req.session.userId,
     });
-    console.log(newDescription);
     res.status(200).json(newDescription);
   } catch (message) {
     res.status(500).json({ message: 'Crushed' });

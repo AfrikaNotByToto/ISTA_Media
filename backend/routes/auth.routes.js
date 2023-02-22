@@ -1,6 +1,3 @@
-/* eslint-disable object-curly-newline */
-/* eslint-disable consistent-return */
-/* eslint-disable import/no-extraneous-dependencies */
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { User } = require('../db/models');
@@ -48,24 +45,6 @@ router.post('/sign-in', async (req, res) => {
     };
     req.session.userId = checkUserName.id;
     res.status(200).json({ user });
-    // if (email && password) {
-    //   let user = await User.findOne({ where: { email } });
-    //   if (user && (await bcrypt.compare(password, user.password))) {
-    //     user = {
-    //       id: user.id,
-    //       name: user.name,
-    //       email: user.email,
-    //     };
-    //     req.session.userId = user.id;
-    //     res.status(201).json(user);
-    //   } else {
-    //     res
-    //       .status(403)
-    //       .json({ message: 'Неверный email или пароль', user: {} });
-    //   }
-    // } else {
-    //   res.status(403).json({ message: 'Заполните все поля', user: {} });
-    // }
   } catch (message) {
     res.status(500).json({ message: 'Заполните все поля' });
   }
@@ -94,13 +73,6 @@ router.post('/sign-up', async (req, res) => {
     };
     req.session.userId = user.id;
     res.status(201).json({ user });
-    // } else {
-    //   res
-    //     .status(403)
-    //     .json({ message: 'Такой email уже существует', user: {} });
-    // } else {
-    //   res.status(403).json({ message: 'Заполните все поля', user: {} });
-    // }
   } catch (message) {
     res.json({ message: 'Заполните все поля' });
   }
