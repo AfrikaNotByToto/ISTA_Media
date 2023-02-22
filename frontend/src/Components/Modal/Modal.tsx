@@ -25,6 +25,7 @@ function Modal(): JSX.Element {
     <>
       <div style={{ marginTop: '40%', marginLeft: '7%' }}>
         <button
+          style={{ fontFamily: 'IBM Plex Sans' }}
           type="button"
           className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
           onClick={toggleModal}
@@ -46,25 +47,32 @@ function Modal(): JSX.Element {
             aria-modal="true"
             aria-labelledby="modal-headline"
           >
-            <p style={{ marginTop: '5%', marginLeft: '5%' }}>
+            <p style={{ marginTop: '5%', marginLeft: '5%', fontFamily: 'IBM Plex Sans' }}>
               Получите чек-лист для создания собственного бренда уже сейчас
             </p>
-            <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-              <label>Ваше имя</label>
+            <div
+              style={{ fontFamily: 'IBM Plex Sans' }}
+              className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4"
+            >
+              <label style={{ fontFamily: 'IBM Plex Sans' }}>Ваше имя</label>
               <input
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 type="text"
                 className="w-full bg-gray-100 p-2 mt-2 mb-3"
               />
-              <label>E-mail</label>
+              <label style={{ fontFamily: 'IBM Plex Sans' }}>E-mail</label>
               <input
                 onChange={(e) => setMail(e.target.value)}
                 value={mail}
                 type="text"
                 className="w-full bg-gray-100 p-2 mt-2 mb-3"
               />
-              {error && <span className="text-red-600">Заполните все поля</span>}
+              {error && (
+                <span className="text-red-600" style={{ fontFamily: 'IBM Plex Sans' }}>
+                  Заполните все поля
+                </span>
+              )}
             </div>
             <div className="bg-gray-200 px-4 py-3 text-right">
               <button
@@ -72,14 +80,16 @@ function Modal(): JSX.Element {
                 className="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-800 mr-2"
                 onClick={toggleModal}
               >
-                <i className="fas fa-times" /> Закрыть
+                <i className="fas fa-times" style={{ fontFamily: 'IBM Plex Sans' }} />{' '}
+                Закрыть
               </button>
               <button
                 onClick={handleClick}
                 type="button"
                 className="py-2 px-4 bg-blue-700 text-white rounded hover:bg-blue-800 mr-2 handleenter"
               >
-                <i className="fas fa-plus" /> Получить
+                <i style={{ fontFamily: 'IBM Plex Sans' }} className="fas fa-plus" />{' '}
+                Получить
               </button>
             </div>
           </div>

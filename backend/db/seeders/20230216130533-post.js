@@ -2,22 +2,22 @@ module.exports = {
   async up(queryInterface) {
     const setPosts = [
       {
-        img: 'https://sun9-17.userapi.com/lM9MMJ8kaFtxBh2xa4j6t9HxOz6W6ck9QwXr2w/Lkx_XDJx04E.jpg',
-        title: 'Большое агентство в большом городе',
+        img: 'https://img.staticmb.com/mbcontent//images/uploads/2023/1/real-estate.jpg',
+        title: 'Риэлторское агентсво - создание очереди заявок',
         description:
-          'Ребрендинг, повышение кликабельности сайта, увеличение аудитории',
+          'Создали профиль агентства в Instagram *(принадлежит экстремисткой организации Meta, запрещенной в РФ). Через связку Instagram* - креатив - посадочная страница - форма для обратной связи получен 301 лид из которых 70% - целевые. Медианная цена заявки - 143 рубля. ',
         userId: 1,
       },
       {
-        img: 'https://cloud.esoft.digital/content/media/site/99/b6/3d/d3dc25bc4c9da5fcb3509d360126daf3668e0f35.jpg',
-        title: 'Продвигаем ваши показатели',
-        description: 'Создание бренда, смм-решения',
+        img: 'https://www.macleans.ca/wp-content/uploads/2019/10/SUREX-investing-in-real-estate-FEATURE.jpg',
+        title: 'Агентство недвижимости - заявки на покупку квартир в новом ЖК',
+        description: 'Цель: Создание очереди лидов при максимальной стоимости заявки - 1400 р. Итоги: Получено -  36 лидов, цена одной заявки - 1204, за время хода РК - 2,4 сделки/ мес в среднем.',
         userId: 1,
       },
       {
-        img: 'https://irecommend.ru/sites/default/files/product-images/541402/2oD4owlafjfruPGqk4OTvw.png',
-        title: 'Продвигаем ваши показатели',
-        description: 'Создание бренда, смм-решения',
+        img: 'https://guardian.ng/wp-content/uploads/2020/06/real-estate.jpg',
+        title: 'Создание очереди лидов для застройщика на 3 новых ЖК',
+        description: 'Цель: построить очередь заявок на покупку квартир в ипотеку в новых ЖК. Итоги: 11 работающих связок, реклама нескольких ЖК вместе по ЦА - конверсия с лендингов повысилась на 20%, получено 153 теплых лида по цене 1300р/лид',
         userId: 1,
       },
     ];
