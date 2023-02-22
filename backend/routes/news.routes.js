@@ -10,20 +10,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
-  try {
-    const { id } = req.params;
-    const oneNew = await New.findOne({ where: { id } });
-    res.json(oneNew);
-  } catch ({ message }) {
-    res.status(500).json(message);
-  }
-});
-
 router.post('/', async (req, res) => {
   try {
     const { img, title, description, url } = req.body;
-    console.log(req.body);
     const News = await New.create({
       img,
       title,
@@ -32,7 +21,6 @@ router.post('/', async (req, res) => {
       userId: req.session.userId,
     });
     res.json(News);
-    console.log(News);
   } catch (message) {
     res.status(500).json({ message: 'Crushed' });
   }
@@ -42,7 +30,6 @@ router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const result = await New.destroy({ where: { id } });
-    console.log(id);
     res.json(Number(id));
   } catch (message) {
     res.status(500).json({ message: 'Crushed' });

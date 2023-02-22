@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import newsSlice from './Components/News/NewsSlice';
 import postSlice from './Components/Posts/PostSlice';
-import reqsSlice from './Components/Requests/ReqSlice';
 import userSlice from './Components/auth/authRegSlice';
 import descriptionSlicer from './Components/AboutUs/descriptionSlicer';
 import emailsSlice from './Components/CallBackFom/CallbackSlice';
@@ -10,7 +9,6 @@ import emailsSlice from './Components/CallBackFom/CallbackSlice';
 const store = configureStore({
   reducer: {
     posts: postSlice,
-    requests: reqsSlice,
     news: newsSlice,
     users: userSlice,
     descriptions: descriptionSlicer,

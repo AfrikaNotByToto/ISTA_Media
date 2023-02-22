@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as api from '../../App/api';
+import { sendMessageTelegram } from '../../App/api/apiPhone';
 
 import { useAppDispatch } from '../../store';
 import { addPhones } from './FooterSlice';
@@ -12,11 +12,11 @@ function Footer(): JSX.Element {
     e.preventDefault();
     if (phone) {
       dispatch(addPhones({ phone }));
-      api.sendMessageTelegram({msg: phone });
-    setPhone('');}
+      sendMessageTelegram({ msg: phone });
+      setPhone('');
+    }
   };
-  
-  
+
   return (
     <footer className="flex justify-center px-2 text-gray-100 bg-black">
       <div className="container py-3">
@@ -39,7 +39,6 @@ function Footer(): JSX.Element {
                   }}
                 />
                 <button
-                onClick={handleClick}
                   type="submit"
                   className="w-full m-1 p-2 text-sm bg-blue-700 rounded-lg font-semibold uppercase transition hover:border-blue-800 hover:bg-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-700 lg:w-auto"
                 >
@@ -58,12 +57,7 @@ function Footer(): JSX.Element {
               src="/img/2023-02-16 16.27.36.jpg"
               alt="logo"
             />
-            <a className="px-2 text-sm">2021 ©</a>
-          </div>
-          <div className="flex mt-4 md:m-0">
-            <div className="-mx-4">
-              <a className="px-8 text-lg">ista@gmail.com</a>
-            </div>
+            <a className="px-2 text-sm">ista@gmail.com</a>
           </div>
         </div>
       </div>

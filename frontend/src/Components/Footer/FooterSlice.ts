@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { PhoneForm, State } from './Types/types';
-import * as api from '../../App/api';
+import { addPhone } from '../../App/api/apiPhone';
 
 const initialState: State = {
   phones: [],
@@ -8,7 +8,7 @@ const initialState: State = {
 };
 
 export const addPhones = createAsyncThunk('phones/add', (newPhone: PhoneForm) =>
-  api.addPhone(newPhone)
+  addPhone(newPhone)
 );
 
 const phoneSlice = createSlice({

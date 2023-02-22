@@ -1,4 +1,4 @@
-import { Description, DescriptionId } from '../Components/AboutUs/Types/type';
+import { Description, DescriptionId } from '../../Components/AboutUs/Types/type';
 
 export const loadDescription = async (): Promise<Description[]> => {
   const res = await fetch('http://localhost:4000/api/about');

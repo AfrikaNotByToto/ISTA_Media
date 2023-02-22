@@ -14,18 +14,20 @@ function Authorization(): JSX.Element {
     if ('userName' in user) {
       nav('/adminPage');
     }
-  }, [user]);
+  }, [nav, user]);
   const login = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     dispatch(loginUser({ userName, password }));
   };
   return (
-
     <center>
       <div style={{ marginTop: '10rem' }} className="w-full max-w-lg ">
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={login}>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="userName">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="userName"
+            >
               Имя пользователя
             </label>
             <input
@@ -36,11 +38,13 @@ function Authorization(): JSX.Element {
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               style={{ color: 'white' }}
-
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="password"
+            >
               Пароль
             </label>
             <input
@@ -53,21 +57,20 @@ function Authorization(): JSX.Element {
               placeholder="*********"
               style={{ color: 'white' }}
             />
-
           </div>
           <div className="flex flex-col items-center">
-
-            <button className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800" type="submit">
+            <button
+              className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
+              type="submit"
+            >
               Войти
             </button>
 
             <h2>{message}</h2>
           </div>
         </form>
-
       </div>
     </center>
-
   );
 }
 

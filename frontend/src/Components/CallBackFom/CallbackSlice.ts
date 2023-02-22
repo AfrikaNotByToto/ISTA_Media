@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import * as api from '../../App/api';
+import addEmailList from '../../App/api/apiEmail';
 import { Emailform, State } from './Types/types';
 
 const initialState: State = {
@@ -8,7 +8,7 @@ const initialState: State = {
 };
 
 export const addEmailss = createAsyncThunk('emails/add', (newEmail: Emailform) =>
-  api.addEmailList(newEmail)
+  addEmailList(newEmail)
 );
 
 const emailsSlice = createSlice({

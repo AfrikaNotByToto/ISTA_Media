@@ -1,12 +1,10 @@
 import React, { useLayoutEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-// import { useParams } from 'react-router-dom';
-import { RootState, useAppDispatch } from '../../store';
+import { RootState, useAppDispatch } from '../../../store';
 import LoadingNews from './LoadingNews';
-import { initNews } from '../News/NewsSlice';
+import { initNews } from '../../News/NewsSlice';
 
 function NewsList(): JSX.Element {
-  // const { postId } = useParams();
   const [loading, setLoading] = useState(true);
   const state = useSelector((store: RootState) => store.news.news);
   const dispatch = useAppDispatch();
