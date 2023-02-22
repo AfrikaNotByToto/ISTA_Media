@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as api from '../../App/api';
+import * as api from '../../App/api/api';
 
 function Inputes({ dataValue, form }: { dataValue: Date; form: string }): JSX.Element {
   const [name, setName] = useState('');

@@ -1,7 +1,5 @@
 import React, { useLayoutEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
-// import 'normalize.css';
 
 import NavBar from '../Components/NavBar/NavBar';
 
@@ -22,25 +20,18 @@ function App(): JSX.Element {
 
   useLayoutEffect(() => {
     dispatch(checkUser());
-  }, []);
+  }, [dispatch]);
   return (
     <div className="w-full">
       <NavBar />
-      {/* <Route path="/" element={<NavBar />}> */}
-
       <Routes>
-        {/* <Route index element={<MainPage />} /> */}
-
         <Route path="/cases" element={<PostPage />} />
         <Route index element={<MainPage />} />
         <Route path="/adminPage" element={<AdminPage />} />
         <Route path="/news" element={<NewsPage />} />
         <Route path="/admin" element={<Authorization />} />
         <Route path="registration" element={<Registration />} />
-
         <Route path="/about" element={<AboutUs />} />
-
-        {/* </Route> */}
       </Routes>
       <Footer />
     </div>
