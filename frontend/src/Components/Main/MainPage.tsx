@@ -19,6 +19,7 @@ export default function MainPage(): JSX.Element {
               left: '7%',
               color: 'black',
               fontWeight: 'bolder',
+              fontFamily: 'IBM Plex Sans',
             }}
           >
             Ваши клиенты вас найдут
@@ -31,6 +32,7 @@ export default function MainPage(): JSX.Element {
               left: '7%',
               color: 'black',
               fontSize: '25px',
+              fontFamily: 'IBM Plex Sans',
             }}
           >
             сотрудничаем с застройщиками,
@@ -42,6 +44,7 @@ export default function MainPage(): JSX.Element {
               left: '7%',
               color: 'black',
               fontSize: '25px',
+              fontFamily: 'IBM Plex Sans',
             }}
           >
             риэлторскими агенствами и отелями

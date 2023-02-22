@@ -39,12 +39,14 @@ export default function NavBar(): JSX.Element {
                 className="flex space-evenly "
                 style={{ width: '25%', justifyContent: 'space-between' }}
               >
-                <div>Admin Panel</div>
+                <div style={{ fontFamily: 'IBM Plex Sans' }}>Admin Panel</div>
                 <NavLink className="text-xl text-white" to="/registration">
-                  <div>Регистрация</div>
+                  <div style={{ fontFamily: 'IBM Plex Sans' }}>Регистрация</div>
                 </NavLink>
                 <NavLink className="text-xl text-white" to="/admin">
-                  <div onClick={vixod}>Выйти</div>
+                  <div onClick={vixod} style={{ fontFamily: 'IBM Plex Sans' }}>
+                    Выйти
+                  </div>
                 </NavLink>
               </div>
             </>
@@ -86,19 +88,23 @@ export default function NavBar(): JSX.Element {
                       className="border-b border-gray-400 my-8 uppercase "
                       style={{ color: 'black' }}
                     >
-                      <a href="/about">О нас</a>
+                      <a href="/about" style={{ fontFamily: 'IBM Plex Sans' }}>
+                        О нас
+                      </a>
                     </li>
                     <li
                       className="border-b border-gray-400 my-8 uppercase"
-                      style={{ color: 'black' }}
+                      style={{ color: 'black', fontFamily: 'IBM Plex Sans' }}
                     >
                       <a href="/cases">Кейсы</a>
                     </li>
                     <li
                       className="border-b border-gray-400 my-8 uppercase"
-                      style={{ color: 'black' }}
+                      style={{ color: 'black', fontFamily: 'IBM Plex Sans' }}
                     >
-                      <a href="/news">Новости</a>
+                      <a style={{ fontFamily: 'IBM Plex Sans' }} href="/news">
+                        Новости
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -107,13 +113,25 @@ export default function NavBar(): JSX.Element {
                 className="DESKTOP-MENU hidden flex-auto space-x-8 lg:flex"
                 style={{ justifyContent: 'flex-end' }}
               >
-                <Link className="text-xl text-white" to="/about">
+                <Link
+                  style={{ fontFamily: 'IBM Plex Sans' }}
+                  className="text-xl text-white"
+                  to="/about"
+                >
                   О нас
                 </Link>
-                <Link className="text-xl text-white" to="/cases">
+                <Link
+                  style={{ fontFamily: 'IBM Plex Sans' }}
+                  className="text-xl text-white"
+                  to="/cases"
+                >
                   Кейсы
                 </Link>
-                <Link className="text-xl text-white" to="/news">
+                <Link
+                  style={{ fontFamily: 'IBM Plex Sans' }}
+                  className="text-xl text-white"
+                  to="/news"
+                >
                   Новости
                 </Link>
               </ul>

@@ -20,7 +20,10 @@ function Footer(): JSX.Element {
   return (
     <footer className="flex justify-center px-2 text-gray-100 bg-black">
       <div className="container py-5">
-        <h1 className="text-center text-lg font-bold lg:text-xl">
+        <h1
+          className="text-center text-lg lg:text-xl"
+          style={{ fontFamily: 'IBM Plex Sans' }}
+        >
           Свяжитесь с нами <br />
         </h1>
 
@@ -39,6 +42,7 @@ function Footer(): JSX.Element {
                   }}
                 />
                 <button
+                  style={{ fontFamily: 'IBM Plex Sans' }}
                   type="submit"
                   className="w-full m-1 p-2 text-sm bg-blue-700 rounded-lg font-semibold uppercase transition hover:border-blue-800 hover:bg-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-700 lg:w-auto"
                 >
@@ -57,7 +61,9 @@ function Footer(): JSX.Element {
               src="/img/2023-02-16 16.27.36.jpg"
               alt="logo"
             />
-            <a className="px-2 text-sm">ista@gmail.com</a>
+            <a style={{ fontFamily: 'IBM Plex Sans' }} className="px-2 text-sm">
+              ista@gmail.com
+            </a>
           </div>
         </div>
       </div>

@@ -28,7 +28,10 @@ export default function DescriptionCard({
         />
 
         <div className="px-6 py-4">
-          <div style={{ color: 'gray' }} className="font-bold text-xl mb-2">
+          <div
+            style={{ color: 'black', fontFamily: 'IBM Plex Sans' }}
+            className="font-bold text-xl mb-2"
+          >
             {description.body}
           </div>
         </div>

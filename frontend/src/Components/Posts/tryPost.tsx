@@ -8,7 +8,12 @@ export default function TryPost({ state }: { state: Post[] }): JSX.Element {
     <>
       <div
         className="flex justify-center"
-        style={{ marginTop: '11rem', marginBottom: '-5rem', fontSize: '30px' }}
+        style={{
+          marginTop: '11rem',
+          marginBottom: '-5rem',
+          fontSize: '30px',
+          fontFamily: 'IBM Plex Sans',
+        }}
       >
         <h1>Наши кейсы</h1>
       </div>

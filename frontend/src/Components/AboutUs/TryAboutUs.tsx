@@ -10,8 +10,6 @@ export default function TryAboutUs({ state }: { state: Description[] }): JSX.Ele
         justifyContent: 'space-around',
         alignItems: 'center',
         flexWrap: 'wrap',
-        // flexFlow: 'row wrap',
-        // gridTemplateColumns: 'repeat(3, 1fr)',
         margin: 'auto',
         textAlign: 'center',
       }}
