@@ -1,7 +1,7 @@
 import { State, User } from '../../Components/auth/Types/types';
 
 export const loginUser = async (users: User): Promise<State> => {
-  const res = await fetch('http://localhost:4000/api/auth/sign-in', {
+  const res = await fetch('/api/auth/sign-in', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ export const loginUser = async (users: User): Promise<State> => {
 };
 
 export const regUser = async (newUser: User): Promise<State> => {
-  const res = await fetch('http://localhost:4000/api/auth/sign-up', {
+  const res = await fetch('/api/auth/sign-up', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export const regUser = async (newUser: User): Promise<State> => {
   return res.json();
 };
 export const getCheckUser = async (): Promise<State> => {
-  const res = await fetch('http://localhost:4000/api/auth/check', {
+  const res = await fetch('/api/auth/check', {
     credentials: 'include',
   });
 
@@ -38,7 +38,7 @@ export const getCheckUser = async (): Promise<State> => {
   return data;
 };
 export const Logout = async (): Promise<State> => {
-  const res = await fetch('http://localhost:4000/api/auth/logout', {
+  const res = await fetch('/api/auth/logout', {
     credentials: 'include',
   });
 

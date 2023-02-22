@@ -1,13 +1,13 @@
 import { OneNews, NewsId } from '../../Components/News/Types/types';
 
 export const loadNews = async (): Promise<OneNews[]> => {
-  const res = await fetch('http://localhost:4000/api/news');
+  const res = await fetch('/api/news');
   const data = await res.json();
   return data;
 };
 
 export const addNews = async (newNews: OneNews): Promise<OneNews> => {
-  const res = await fetch('http://localhost:4000/api/news', {
+  const res = await fetch('/api/news', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -23,14 +23,14 @@ export const addNews = async (newNews: OneNews): Promise<OneNews> => {
 };
 
 export const delNews = async (id: NewsId): Promise<NewsId> => {
-  const res = await fetch(`http://localhost:4000/api/news/${id}`, {
+  const res = await fetch(`/api/news/${id}`, {
     method: 'DELETE',
   });
   return res.json();
 };
 
 export const updateNews = async (oneNews: OneNews): Promise<OneNews> => {
-  const res = await fetch(`http://localhost:4000/api/news/${oneNews.id}`, {
+  const res = await fetch(`/api/news/${oneNews.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
