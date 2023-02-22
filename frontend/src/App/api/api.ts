@@ -1,13 +1,13 @@
 import { Post, PostId } from '../../Components/Posts/Types/types';
 
 export const loadPosts = async (): Promise<Post[]> => {
-  const res = await fetch('http://localhost:4000/api/posts');
+  const res = await fetch('/api/posts');
   const data = await res.json();
   return data;
 };
 
 export const addPost = async (newPost: Post): Promise<Post> => {
-  const res = await fetch('http://localhost:4000/api/posts', {
+  const res = await fetch('/api/posts', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -22,14 +22,14 @@ export const addPost = async (newPost: Post): Promise<Post> => {
 };
 
 export const delPost = async (id: PostId): Promise<PostId> => {
-  const res = await fetch(`http://localhost:4000/api/posts/${id}`, {
+  const res = await fetch(`/api/posts/${id}`, {
     method: 'DELETE',
   });
   return res.json();
 };
 
 export const updatePost = async (post: Post): Promise<Post> => {
-  const res = await fetch(`http://localhost:4000/api/Posts/${post.id}`, {
+  const res = await fetch(`/api/Posts/${post.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
