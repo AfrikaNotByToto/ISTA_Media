@@ -62,7 +62,7 @@ function Footer(): JSX.Element {
               alt="logo"
             />
             <a style={{ fontFamily: 'IBM Plex Sans' }} className="px-2 text-sm">
-              ista@gmail.com
+              ista_agency@mail.ru
             </a>
           </div>
         </div>
