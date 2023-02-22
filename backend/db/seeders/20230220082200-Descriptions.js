@@ -10,13 +10,13 @@ module.exports = {
         userId: 1,
       },
       {
-        img: "https://www.kindpng.com/picc/m/112-1123523_social-media-marketing-icon-hd-png-download.png",
+        img: "https://cdn-icons-png.flaticon.com/512/1260/1260086.png",
        body: 'SMM',
         userId: 1,
       },
       {
-        img: 'https://img.freepik.com/premium-vector/cute-robot-logo-bot-symbol-design-chatbot-icon-concept-voice-support-service-bot-online-support_8169-538.jpg?w=2000',
-       body: 'Чат-бот',
+        img: 'https://cdn-icons-png.flaticon.com/512/2223/2223044.png',
+       body: 'Чат-боты',
         userId: 1,
       },
       {
@@ -25,13 +25,13 @@ module.exports = {
         userId: 1,
       },
       {
-        img: 'https://static.vecteezy.com/system/resources/previews/007/877/697/original/drone-icon-style-free-vector.jpg',
+        img: 'https://cdn-icons-png.flaticon.com/512/4212/4212583.png',
        body: 'Аэоросъемка',
         userId: 1,
       },
       {
-        img: 'https://thumbs.dreamstime.com/b/%D1%81%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5-%D0%B2%D0%B8%D0%B7%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D1%81%D0%B2%D1%8F%D0%B7%D0%B8-d-%D1%8D%D1%81%D0%BA%D0%B8%D0%B7%D0%B0-210254121.jpg',
-       body: '3-D Визуализация',
+        img: 'https://cdn-icons-png.flaticon.com/512/2818/2818102.png',
+       body: '3D Визуализация',
         userId: 1,
       },
     ]
