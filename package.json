@@ -1,0 +1,21 @@
+{
+  "name": "ista_media",
+  "version": "1.0.0",
+  "description": "Привет",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd backend && npm i && npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:all && cd ../frontend && npm i && DISABLE_ESLINT_PLUGIN=true npm run build",
+    "start": "cd backend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AfrikaNotByToto/ISTA_Media.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AfrikaNotByToto/ISTA_Media/issues"
+  },
+  "homepage": "https://github.com/AfrikaNotByToto/ISTA_Media#readme"
+}
