@@ -1,7 +1,5 @@
 /* eslint-disable max-len */
 import React from 'react';
-import CallBackForm from '../CallBackFom/CallBackForm';
-// import Footer from '../Footer/Footer';
 import Modal from '../Modal/Modal';
 
 export default function MainPage(): JSX.Element {
@@ -67,16 +65,6 @@ export default function MainPage(): JSX.Element {
         />
         <CallBackForm /> */}
       </div>
-      <div
-        className="flex"
-        style={{
-          marginTop: '65px',
-          marginLeft: '50px',
-          height: '55px',
-          width: 'auto',
-        }}
-      />
-      <CallBackForm />
       {/* <Footer /> */}
     </>
   );
