@@ -1,9 +1,10 @@
+const bcrypt = require('bcrypt');
 module.exports = {
-  async up (queryInterface) {
+  async up(queryInterface) {
     const setUsers = [
       {
         userName: 'admin',
-        password: '11111',
+        password: await bcrypt.hash('11111', 10),
       },
     ];
     const users = setUsers.map((user) => ({
@@ -14,7 +15,7 @@ module.exports = {
     await queryInterface.bulkInsert('Users', users);
   },
 
-  async down (queryInterface) {
+  async down(queryInterface) {
     await queryInterface.bulkDelete('Users', null, {});
-  }
+  },
 };

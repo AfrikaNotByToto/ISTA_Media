@@ -37,7 +37,7 @@ function Authorization(): JSX.Element {
               type="text"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
-              style={{ color: 'white' }}
+              style={{ color: 'black' }}
             />
           </div>
           <div className="mb-6">
@@ -55,7 +55,7 @@ function Authorization(): JSX.Element {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="*********"
-              style={{ color: 'white' }}
+              style={{ color: 'black' }}
             />
           </div>
           <div className="flex flex-col items-center">

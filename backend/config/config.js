@@ -3,7 +3,6 @@ const morgan = require('morgan');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-const { resLocals, getUser } = require('../middleware/auth');
 const sessionConfig = require('./session');
 
 const corsOptions = {
@@ -20,8 +19,6 @@ const serverConfig = (app) => {
   app.use(cookieParser());
   app.use(session(sessionConfig));
   app.disable('x-powered-by');
-  app.use(resLocals);
-  app.use(getUser);
 };
 
 module.exports = serverConfig;

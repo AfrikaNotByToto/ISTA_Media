@@ -53,14 +53,14 @@ router.post('/sign-up', async (req, res) => {
   try {
     const { userName, password } = req.body;
     const CheckUser = await User.findOne({ where: { userName } });
-
-    if (CheckUser) {
-      return res.status(403).json({ messages: 'Пользователь уже существует' });
-    }
-    if (!userName || !password) {
+    if (userName === '' && password === '') {
       res.status(403).json({ messages: 'Заполните все поля' });
       return;
     }
+    if (CheckUser) {
+      return res.status(403).json({ messages: 'Пользователь уже существует' });
+    }
+
     const hash = await bcrypt.hash(password, 10);
     const newUser = await User.create({
       userName,
@@ -70,9 +70,15 @@ router.post('/sign-up', async (req, res) => {
       id: newUser.id,
       userName: newUser.userName,
     };
-    res.status(201).json({ user });
+    res
+      .status(201)
+      .json({
+        messages:
+          'Вы успешно зарегистрировались, нажмите еще раз чтобы перейти',
+        user,
+      });
   } catch (messages) {
-    res.json({ messages: 'Заполните все поля' });
+    res.json({ messages: 'Failed to fetch' });
   }
 });
 

@@ -28,6 +28,7 @@ const userSlice = createSlice({
       .addCase(registrUser.fulfilled, (state, action) => {
         if (action.payload.user) {
           state.user = action.payload.user;
+          state.messages = 'Вы успешно зарегистрировались, нажмите еще раз чтобы перейти';
         } else {
           state.messages = action.payload.messages;
         }
