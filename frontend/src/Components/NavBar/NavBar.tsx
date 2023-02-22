@@ -13,7 +13,10 @@ export default function NavBar(): JSX.Element {
     dispatch(LogoutCheck());
   };
   return (
-    <div className="sticky top-0" style={{ backgroundColor: 'black' }}>
+    <div
+      className="p-2 mt-0 fixed w-full z-10 top-0"
+      style={{ backgroundColor: 'black' }}
+    >
       <div className="flex container flex-auto flex-wrap items-center justify-between mx-auto">
         <nav className="flex-auto py-3 bg-black text-white shadow-lg navbar navbar-expand-lg navbar-light">
           <NavLink className="text-xl text-white" to="/">
