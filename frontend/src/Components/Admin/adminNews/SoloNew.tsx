@@ -16,10 +16,16 @@ function NewsSolo({ oneNews }: { oneNews: OneNews }): JSX.Element {
   return (
     <>
       {modal && <UpdatedNew open={open} oneNews={oneNews} />}
-      <div className="flex justify-center">
-        <div className="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
+      <div
+        className="flex justify-center"
+        style={{
+          border: '1px black solid',
+          marginBottom: '1rem',
+        }}
+      >
+        <div className="block max-w-sm rounded-lg bg-white  dark:bg-neutral-700">
           <a href="#!">
-            <img className="rounded-t-lg" src={oneNews.img} alt="" />
+            <img className="rounded-t-lg mt-2 " src={oneNews.img} alt="" />
           </a>
           <div className="p-6">
             <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
@@ -28,16 +34,16 @@ function NewsSolo({ oneNews }: { oneNews: OneNews }): JSX.Element {
             <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
               {oneNews.description}
             </p>
-            <div className="flex justify-evenly">
+            <div className="flex justify-evenly mt-10">
               <button
-                className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
+                className=" py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
                 onClick={del}
                 type="button"
               >
                 Удалить
               </button>
               <button
-                className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
+                className=" py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
                 onClick={open}
                 type="button"
               >
