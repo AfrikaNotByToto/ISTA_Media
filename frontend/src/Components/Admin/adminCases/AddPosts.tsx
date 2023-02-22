@@ -65,7 +65,7 @@ export default function AddPostss(): JSX.Element {
         <div style={{ marginBottom: '1rem' }} className="flex justify-center">
           <button
             type="submit"
-            className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
+            className="py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
             data-te-ripple-init
             data-te-ripple-color="light"
           >

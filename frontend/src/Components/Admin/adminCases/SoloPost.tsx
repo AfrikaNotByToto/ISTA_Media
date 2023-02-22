@@ -23,12 +23,13 @@ function SoloPost({ post }: { post: Post }): JSX.Element {
           width: '350px',
           marginTop: '1rem',
           marginBottom: '2rem',
+          border: '1px black solid',
         }}
-        className="max-w-sm rounded overflow-hidden "
+        className="max-w-sm rounded overflow-y-hidden "
       >
         <center>
           <div className="flex justify-center">
-            <div className="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
+            <div className="block max-w-sm rounded-lg bg-white  dark:bg-neutral-700">
               <center>
                 <img
                   style={{ width: '150px', height: '150px', marginTop: '1rem' }}
@@ -47,16 +48,16 @@ function SoloPost({ post }: { post: Post }): JSX.Element {
                   {post.description}
                 </span>
 
-                <div>
+                <div className="flex justify-evenly mt-10">
                   <button
-                    className="shadow-2xl py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
+                    className="py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
                     onClick={del}
                     type="button"
                   >
                     Удалить
                   </button>
                   <button
-                    className="shadow-2xl py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
+                    className=" py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
                     onClick={open}
                     type="button"
                   >
