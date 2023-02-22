@@ -39,11 +39,19 @@ export default function NavBar(): JSX.Element {
                 className="flex space-evenly "
                 style={{ width: '25%', justifyContent: 'space-between' }}
               >
-                <div style={{ fontFamily: 'IBM Plex Sans' }}>Admin Panel</div>
-                <NavLink className="text-xl text-white" to="/registration">
+                <div
+                  className="hover:text-blue-800"
+                  style={{ fontFamily: 'IBM Plex Sans' }}
+                >
+                  Admin Panel
+                </div>
+                <NavLink
+                  className="text-xl text-white hover:text-blue-800"
+                  to="/registration"
+                >
                   <div style={{ fontFamily: 'IBM Plex Sans' }}>Регистрация</div>
                 </NavLink>
-                <NavLink className="text-xl text-white" to="/admin">
+                <NavLink className="text-xl text-white hover:text-blue-800" to="/admin">
                   <div onClick={vixod} style={{ fontFamily: 'IBM Plex Sans' }}>
                     Выйти
                   </div>
@@ -115,21 +123,21 @@ export default function NavBar(): JSX.Element {
               >
                 <Link
                   style={{ fontFamily: 'IBM Plex Sans' }}
-                  className="text-xl text-white"
+                  className="text-xl text-white hover:text-blue-800"
                   to="/about"
                 >
                   О нас
                 </Link>
                 <Link
                   style={{ fontFamily: 'IBM Plex Sans' }}
-                  className="text-xl text-white"
+                  className="text-xl text-white hover:text-blue-800"
                   to="/cases"
                 >
                   Кейсы
                 </Link>
                 <Link
                   style={{ fontFamily: 'IBM Plex Sans' }}
-                  className="text-xl text-white"
+                  className="text-xl text-white hover:text-blue-800"
                   to="/news"
                 >
                   Новости
