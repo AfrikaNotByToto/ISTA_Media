@@ -45,14 +45,14 @@ export default function DescriptionSolo({
         </center>
         <div className="flex justify-evenly">
           <button
-            className="shadow-2xl py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
+            className=" py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
             onClick={del}
             type="button"
           >
             Удалить
           </button>
           <button
-            className="shadow-2xl py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
+            className=" py-2 px-2 bg-blue-700 text-white rounded hover:bg-blue-800"
             onClick={open}
             type="button"
           >
