@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import * as apiUser from '../../App/apiUser';
+import * as apiUser from '../../App/api/apiUser';
 
 import { State, User } from './Types/types';
 
@@ -32,7 +32,6 @@ const userSlice = createSlice({
         }
       })
       .addCase(registrUser.rejected, (state, action) => {
-        // показываем как меняется state если загрузка прошла успешно
         state.message = action.error.message;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
