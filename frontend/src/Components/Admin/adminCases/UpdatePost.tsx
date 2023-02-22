@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
 
-import { useAppDispatch } from '../../store';
-import { Description } from '../AboutUs/Types/type';
-import { updateDescriptions } from '../AboutUs/descriptionSlicer';
+import { useAppDispatch } from '../../../store';
+import { updateDPost } from '../../Posts/PostSlice';
+import { Post } from '../../Posts/Types/types';
 
-export default function UpdatedDescription({
+export default function UpdatedPost({
   open,
-  description,
+  post,
 }: {
-  description: Description;
+  post: Post;
   open: () => void;
 }): JSX.Element {
-  const [img, setImg] = useState(description.img);
-  const [body, setBody] = useState(description.body);
+  const [img, setImg] = useState(post.img);
+  const [title, setTitle] = useState(post.title);
+  const [description, setDescription] = useState(post.description);
 
   const dispatch = useAppDispatch();
-  const updatedDescriptionOne = (e: React.FormEvent<HTMLFormElement>): void => {
+  const updatedPost = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    dispatch(updateDescriptions({ id: description.id, img, body }));
+    dispatch(updateDPost({ id: post.id, img, title, description }));
     open();
   };
   const addImg = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -25,11 +26,8 @@ export default function UpdatedDescription({
   };
 
   return (
-
-    <div
-      className="block max-w-lg rounded-lg bg-white p-2 shadow-lg dark:bg-neutral-700"
-    >
-      <form onSubmit={updatedDescriptionOne}>
+    <div className="block max-w-sm rounded-lg bg-white p-5 shadow-lg dark:bg-neutral-700">
+      <form onSubmit={updatedPost}>
         <center>
           <div className="relative mb-12" data-te-input-wrapper-init>
             <input
@@ -41,7 +39,17 @@ export default function UpdatedDescription({
               defaultValue={img}
               onChange={addImg}
             />
-
+          </div>
+          <div className="relative mb-12" data-te-input-wrapper-init>
+            <input
+              style={{ backgroundColor: 'white', color: 'black' }}
+              type="text"
+              id="title"
+              placeholder="Заголовок"
+              name="title"
+              defaultValue={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
           </div>
           <div className="relative mb-12" data-te-input-wrapper-init>
             <input
@@ -50,11 +58,11 @@ export default function UpdatedDescription({
               id="description"
               placeholder="Описание"
               name="description"
-              defaultValue={body}
-              onChange={(e) => setBody(e.target.value)}
+              defaultValue={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
-
           </div>
+
           <div className="flex justify-evenly">
             <button
               className="shadow-2xl py-2 px-7 bg-blue-700 text-white rounded hover:bg-blue-800"
@@ -66,6 +74,5 @@ export default function UpdatedDescription({
         </center>
       </form>
     </div>
-
   );
 }

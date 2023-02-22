@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-
-import { useAppDispatch } from '../../store';
-import { OneNews } from '../News/Types/types';
-import { updatedNews } from '../News/NewsSlice';
+import { useAppDispatch } from '../../../store';
+import { OneNews } from '../../News/Types/types';
+import { updatedNews } from '../../News/NewsSlice';
 
 export default function UpdatedNew({
   open,
@@ -27,10 +26,7 @@ export default function UpdatedNew({
   };
 
   return (
-
-    <div
-      className="block max-w-sm rounded-lg bg-white p-5 shadow-lg dark:bg-neutral-700"
-    >
+    <div className="block max-w-sm rounded-lg bg-white p-5 shadow-lg dark:bg-neutral-700">
       <form onSubmit={updNew}>
         <center>
           <div className="relative mb-12" data-te-input-wrapper-init>
@@ -43,7 +39,6 @@ export default function UpdatedNew({
               defaultValue={img}
               onChange={addImg}
             />
-
           </div>
           <div className="relative mb-12" data-te-input-wrapper-init>
             <input
@@ -55,7 +50,6 @@ export default function UpdatedNew({
               defaultValue={title}
               onChange={(e) => setTitle(e.target.value)}
             />
-
           </div>
           <div className="relative mb-12" data-te-input-wrapper-init>
             <input
@@ -67,7 +61,6 @@ export default function UpdatedNew({
               defaultValue={description}
               onChange={(e) => setDescription(e.target.value)}
             />
-
           </div>
           <div className="relative mb-12" data-te-input-wrapper-init>
             <input
@@ -79,7 +72,6 @@ export default function UpdatedNew({
               defaultValue={url}
               onChange={(e) => setUrl(e.target.value)}
             />
-
           </div>
           <div className="flex justify-evenly">
             <button

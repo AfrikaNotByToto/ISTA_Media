@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Description } from '../AboutUs/Types/type';
-import { useAppDispatch } from '../../store';
-import { deleteDescriptions } from '../AboutUs/descriptionSlicer';
+import { Description } from '../../AboutUs/Types/type';
+import { useAppDispatch } from '../../../store';
+import { deleteDescriptions } from '../../AboutUs/descriptionSlicer';
 import UpdatedDescription from './UpdateDescription';
 
-// eslint-disable-next-line max-len
 export default function DescriptionSolo({
   description,
 }: {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { OneNews } from '../News/Types/types';
-import { useAppDispatch } from '../../store';
-import { deleteNews } from '../News/NewsSlice';
+import { OneNews } from '../../News/Types/types';
+import { useAppDispatch } from '../../../store';
+import { deleteNews } from '../../News/NewsSlice';
 import UpdatedNew from './UpdateNews';
 
 function NewsSolo({ oneNews }: { oneNews: OneNews }): JSX.Element {
@@ -17,20 +17,12 @@ function NewsSolo({ oneNews }: { oneNews: OneNews }): JSX.Element {
     <>
       {modal && <UpdatedNew open={open} oneNews={oneNews} />}
       <div className="flex justify-center">
-        <div
-          className="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700"
-        >
+        <div className="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
           <a href="#!">
-            <img
-              className="rounded-t-lg"
-              src={oneNews.img}
-              alt=""
-            />
+            <img className="rounded-t-lg" src={oneNews.img} alt="" />
           </a>
           <div className="p-6">
-            <h5
-              className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
-            >
+            <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
               {oneNews.title}
             </h5>
             <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">

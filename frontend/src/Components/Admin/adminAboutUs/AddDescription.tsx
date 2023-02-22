@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import { useAppDispatch } from '../../store';
-import { addDescriptions } from '../AboutUs/descriptionSlicer';
+import { useAppDispatch } from '../../../store';
+import { addDescriptions } from '../../AboutUs/descriptionSlicer';
 
 export default function AddDescription(): JSX.Element {
   const [img, setImg] = useState('');
@@ -15,9 +15,13 @@ export default function AddDescription(): JSX.Element {
     setImg('');
   };
   return (
-
-    <div style={{ border: '1px solid', marginTop: '1rem', marginBottom: '1rem' }} className="block w-2/4 rounded-lg bg-white p-25">
-      <h3 style={{ color: 'black', fontWeight: 'bold', fontSize: '20px' }}>Форма добавления о нас</h3>
+    <div
+      style={{ border: '1px solid', marginTop: '1rem', marginBottom: '1rem' }}
+      className="block w-2/4 rounded-lg bg-white p-25"
+    >
+      <h3 style={{ color: 'black', fontWeight: 'bold', fontSize: '20px' }}>
+        Форма добавления о нас
+      </h3>
       <form onSubmit={addedDescription}>
         <div className="relative mb-5 " data-te-input-wrapper-init>
           <input
@@ -29,9 +33,7 @@ export default function AddDescription(): JSX.Element {
             value={img}
             onChange={(e) => setImg(e.target.value)}
             placeholder="Ссылка на картинку"
-
           />
-
         </div>
         <div className="relative mb-6 " data-te-input-wrapper-init>
           <input
@@ -43,9 +45,7 @@ export default function AddDescription(): JSX.Element {
             value={body}
             onChange={(e) => setBody(e.target.value)}
             placeholder="Описание"
-
           />
-
         </div>
         <button
           style={{ marginBottom: '1rem' }}
@@ -58,6 +58,5 @@ export default function AddDescription(): JSX.Element {
         </button>
       </form>
     </div>
-
   );
 }

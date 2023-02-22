@@ -1,8 +1,8 @@
 import React, { useLayoutEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { RootState, useAppDispatch } from '../../store';
+import { RootState, useAppDispatch } from '../../../store';
 import LoadingAboutUs from './LoadingAboutUs';
-import { initDescription } from '../AboutUs/descriptionSlicer';
+import { initDescription } from '../../AboutUs/descriptionSlicer';
 
 export default function DescriptionCardList(): JSX.Element {
   const [loading, setLoading] = useState(true);
