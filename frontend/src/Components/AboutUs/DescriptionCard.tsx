@@ -9,8 +9,7 @@ export default function DescriptionCard({
   return (
     <div
       style={{
-        height: '370px',
-        width: '300px',
+        width: '100%',
         border: '1px white solid',
         marginBottom: '1rem',
       }}
@@ -18,7 +17,11 @@ export default function DescriptionCard({
     >
       <center>
         <img
-          style={{ width: '250px', height: '250px', marginTop: '1rem' }}
+          style={{
+            width: '250px',
+            height: '250px',
+            marginTop: '1rem',
+          }}
           className="w-full"
           src={description.img}
           alt="Sunset in the mountains"

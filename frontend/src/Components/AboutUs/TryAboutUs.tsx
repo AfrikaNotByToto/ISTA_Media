@@ -6,10 +6,14 @@ export default function TryAboutUs({ state }: { state: Description[] }): JSX.Ele
   return (
     <div
       style={{
-        display: 'grid',
-        flexFlow: 'row wrap',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        margin: '2rem 1rem 1rem 14rem',
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        // flexFlow: 'row wrap',
+        // gridTemplateColumns: 'repeat(3, 1fr)',
+        margin: 'auto',
+        textAlign: 'center',
       }}
     >
       {state.map((description) => (
