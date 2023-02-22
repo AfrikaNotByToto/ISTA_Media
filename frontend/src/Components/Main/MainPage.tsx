@@ -4,9 +4,6 @@ import CallBackForm from '../CallBackFom/CallBackForm';
 // import Footer from '../Footer/Footer';
 import Modal from '../Modal/Modal';
 
-
-import Modal from '../Modal/Modal';
-
 export default function MainPage(): JSX.Element {
   return (
     <>
@@ -81,7 +78,6 @@ export default function MainPage(): JSX.Element {
       />
       <CallBackForm />
       {/* <Footer /> */}
-
     </>
   );
 }
