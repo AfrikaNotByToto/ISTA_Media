@@ -53,7 +53,11 @@ router.post('/sign-up', async (req, res) => {
   try {
     const { userName, password } = req.body;
     const CheckUser = await User.findOne({ where: { userName } });
-    if (userName === '' && password === '') {
+    if (userName === '') {
+      res.status(403).json({ messages: 'Заполните все поля' });
+      return;
+    }
+    if (password === '') {
       res.status(403).json({ messages: 'Заполните все поля' });
       return;
     }
@@ -70,13 +74,10 @@ router.post('/sign-up', async (req, res) => {
       id: newUser.id,
       userName: newUser.userName,
     };
-    res
-      .status(201)
-      .json({
-        messages:
-          'Вы успешно зарегистрировались, нажмите еще раз чтобы перейти',
-        user,
-      });
+    res.status(201).json({
+      messages: 'Вы успешно зарегистрировались, нажмите еще раз чтобы перейти',
+      user,
+    });
   } catch (messages) {
     res.json({ messages: 'Failed to fetch' });
   }

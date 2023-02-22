@@ -19,25 +19,18 @@ export default function NavBar(): JSX.Element {
     >
       <div className="flex container flex-auto flex-wrap items-center justify-between mx-auto">
         <nav className="flex-auto py-3 bg-black text-white shadow-lg navbar navbar-expand-lg navbar-light">
-          <NavLink className="text-xl text-white" to="/">
-            <img
-              src="/img/2023-02-16 16.27.36.jpg"
-              style={{ height: '30px' }}
-              alt="logo"
-            />
-          </NavLink>
           {'id' in user ? (
             <>
               <NavLink className="text-xl text-white" to="/adminPage">
-                <img
-                  src="https://png.pngtree.com/element_our/20200610/ourmid/pngtree-character-default-avatar-image_2237203.jpg"
-                  style={{ height: '30px' }}
-                  alt=""
-                />
+                <img src="/img/admin.png" style={{ height: '30px' }} alt="" />
               </NavLink>
               <div
-                className="flex space-evenly "
-                style={{ width: '25%', justifyContent: 'space-between' }}
+                className="flex justify-around"
+                style={{
+                  width: '25%',
+                  justifyContent: 'space-between',
+                  marginLeft: '45rem',
+                }}
               >
                 <div
                   className="hover:text-blue-800"
@@ -60,6 +53,13 @@ export default function NavBar(): JSX.Element {
             </>
           ) : (
             <>
+              <NavLink className="text-xl text-white" to="/">
+                <img
+                  src="/img/2023-02-16 16.27.36.jpg"
+                  style={{ height: '30px' }}
+                  alt="logo"
+                />
+              </NavLink>
               <section
                 className="MOBILE-MENU flex lg:hidden"
                 style={{ justifyContent: 'flex-end' }}
