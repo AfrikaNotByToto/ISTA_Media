@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as api from '../../App/api/api';
+import sendEmailList from '../../App/api/apiMail';
 
 function Modal(): JSX.Element {
   const [name, setName] = useState('');
@@ -10,21 +10,10 @@ function Modal(): JSX.Element {
     document.getElementById('modal')?.classList.toggle('hidden');
   }
 
-  //   document.addEventListener('keyup', (event) => {
-  //     event.preventDefault();
-  //     console.log(event);
-  //  if (event.code === 'Enter') {
-  //       api.sendEmailList({ name, mail });
-  //       setName('');
-  //       setMail('');
-  //       document.getElementById('modal')?.classList.toggle('hidden');
-  //   }
-  // });
-
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
     if (name && mail) {
-      api.sendEmailList({ name, mail });
+      sendEmailList({ name, mail });
       setName('');
       setMail('');
       document.getElementById('modal')?.classList.toggle('hidden');
