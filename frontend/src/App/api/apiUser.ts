@@ -1,4 +1,4 @@
-import { State, User } from '../Components/auth/Types/types';
+import { State, User } from '../../Components/auth/Types/types';
 
 export const loginUser = async (users: User): Promise<State> => {
   const res = await fetch('http://localhost:4000/api/auth/sign-in', {
@@ -35,7 +35,6 @@ export const getCheckUser = async (): Promise<State> => {
   });
 
   const data = await res.json();
-  console.log(data);
   return data;
 };
 export const Logout = async (): Promise<State> => {
@@ -44,6 +43,5 @@ export const Logout = async (): Promise<State> => {
   });
 
   const data = await res.json();
-  console.log(data);
   return data;
 };

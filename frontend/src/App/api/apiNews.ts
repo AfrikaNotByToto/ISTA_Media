@@ -1,4 +1,4 @@
-import { OneNews, NewsId } from '../Components/News/Types/types';
+import { OneNews, NewsId } from '../../Components/News/Types/types';
 
 export const loadNews = async (): Promise<OneNews[]> => {
   const res = await fetch('http://localhost:4000/api/news');

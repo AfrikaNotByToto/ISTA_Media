@@ -1,4 +1,4 @@
-import { NewMessage, PhoneForm } from '../Components/Footer/Types/types';
+import { NewMessage, PhoneForm } from '../../Components/Footer/Types/types';
 
 export const sendMessageTelegram = async (
   newMessage: NewMessage
