@@ -1,7 +1,7 @@
 import { CheckList } from '../../Components/Modal/Types/types';
 
 const sendEmailList = async (checkList: CheckList): Promise<CheckList> => {
-  const res = await fetch('http://localhost:4000/api/mail', {
+  const res = await fetch('/api/mail', {
     method: 'post',
     headers: {
       'Content-Type': 'application/json',

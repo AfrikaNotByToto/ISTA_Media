@@ -3,7 +3,7 @@ import { NewMessage, PhoneForm } from '../../Components/Footer/Types/types';
 export const sendMessageTelegram = async (
   newMessage: NewMessage
 ): Promise<NewMessage> => {
-  const res = await fetch('http://localhost:4000/api/telegram', {
+  const res = await fetch('/api/telegram', {
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ export const sendMessageTelegram = async (
 };
 
 export const addPhone = async (newPhone: PhoneForm): Promise<PhoneForm> => {
-  const res = await fetch('http://localhost:4000/api/phone', {
+  const res = await fetch('/api/phone', {
     method: 'POST',
 
     headers: {
