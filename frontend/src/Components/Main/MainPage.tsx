@@ -4,11 +4,13 @@ import Modal from '../Modal/Modal';
 export default function MainPage(): JSX.Element {
   return (
     <>
-      <img
-        style={{ position: 'absolute', height: '700px', right: '0', marginTop: '3rem' }}
-        src="/img/4.png"
-        alt=""
-      />
+      <label htmlFor="knopka">
+        <img
+          style={{ position: 'absolute', height: '700px', right: '0', marginTop: '3rem' }}
+          src="/img/4.png"
+          alt=""
+        />
+      </label>
       <div className="container" style={{ position: 'relative' }}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <h1

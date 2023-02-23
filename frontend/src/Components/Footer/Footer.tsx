@@ -31,7 +31,15 @@ function Footer(): JSX.Element {
           <div className="bg-white rounded-lg">
             <div className="flex flex-wrap justify-between md:flex-row">
               <form onSubmit={addedPhone}>
+                <button
+                  style={{ fontFamily: 'IBM Plex Sans' }}
+                  type="submit"
+                  className="w-full m-1 p-2 text-sm bg-blue-700 rounded-lg font-semibold uppercase transition hover:border-blue-800 hover:bg-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-opacity-50 lg:w-auto"
+                >
+                  отправить
+                </button>
                 <input
+                  id="knopka"
                   type="tel"
                   className="m-1 p-2 appearance-none text-gray-700 text-sm focus:outline-none"
                   placeholder="89999999999"
@@ -41,13 +49,6 @@ function Footer(): JSX.Element {
                     setPhone(e.target.value);
                   }}
                 />
-                <button
-                  style={{ fontFamily: 'IBM Plex Sans' }}
-                  type="submit"
-                  className="w-full m-1 p-2 text-sm bg-blue-700 rounded-lg font-semibold uppercase transition hover:border-blue-800 hover:bg-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-opacity-50 lg:w-auto"
-                >
-                  отправить
-                </button>
               </form>
             </div>
           </div>
