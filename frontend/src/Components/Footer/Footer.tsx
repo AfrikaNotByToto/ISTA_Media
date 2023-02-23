@@ -42,6 +42,7 @@ function Footer(): JSX.Element {
                   }}
                 />
                 <button
+                  id="knopka"
                   style={{ fontFamily: 'IBM Plex Sans' }}
                   type="submit"
                   className="w-full m-1 p-2 text-sm bg-blue-700 rounded-lg font-semibold uppercase transition hover:border-blue-800 hover:bg-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-opacity-50 lg:w-auto"
