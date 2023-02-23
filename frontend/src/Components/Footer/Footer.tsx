@@ -44,7 +44,7 @@ function Footer(): JSX.Element {
                 <button
                   style={{ fontFamily: 'IBM Plex Sans' }}
                   type="submit"
-                  className="w-full m-1 p-2 text-sm bg-blue-700 rounded-lg font-semibold uppercase transition hover:border-blue-800 hover:bg-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-blue-700 lg:w-auto"
+                  className="w-full m-1 p-2 text-sm bg-blue-700 rounded-lg font-semibold uppercase transition hover:border-blue-800 hover:bg-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-opacity-50 lg:w-auto"
                 >
                   отправить
                 </button>
