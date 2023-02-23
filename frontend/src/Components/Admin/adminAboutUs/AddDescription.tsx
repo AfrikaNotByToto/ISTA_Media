@@ -31,7 +31,7 @@ export default function AddDescription(): JSX.Element {
             id="img"
             name="img"
             value={img}
-            onChange={(e) => setImg(e.target.value)}
+            onChange={(e) => setImg(String(e.target.value))}
             placeholder="Ссылка на картинку"
           />
         </div>
@@ -43,7 +43,7 @@ export default function AddDescription(): JSX.Element {
             id="body"
             name="body"
             value={body}
-            onChange={(e) => setBody(e.target.value)}
+            onChange={(e) => setBody(String(e.target.value))}
             placeholder="Описание"
           />
         </div>

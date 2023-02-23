@@ -34,7 +34,7 @@ export default function AddPostss(): JSX.Element {
             id="img"
             name="img"
             value={img}
-            onChange={(e) => setImg(e.target.value)}
+            onChange={(e) => setImg(String(e.target.value))}
             placeholder="Ссылка на картинку"
           />
         </div>
@@ -46,7 +46,7 @@ export default function AddPostss(): JSX.Element {
             id="title"
             name="title"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => setTitle(String(e.target.value)))}
             placeholder="Заголовок"
           />
         </div>
@@ -58,7 +58,7 @@ export default function AddPostss(): JSX.Element {
             id="url"
             name="url"
             value={url}
-            onChange={(e) => setUrl(e.target.value)}
+            onChange={(e) => setUrl(String(e.target.value)))}
             placeholder="Ссылка"
           />
         </div>
@@ -70,7 +70,7 @@ export default function AddPostss(): JSX.Element {
             id="description"
             name="description"
             value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={(e) => setDescription(String(e.target.value))}
             placeholder="Описание"
           />
         </div>
