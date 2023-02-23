@@ -14,6 +14,7 @@ import AboutUs from '../Components/AboutUs/AboutUs';
 import { useAppDispatch } from '../store';
 import { checkUser } from '../Components/auth/authRegSlice';
 import Footer from '../Components/Footer/Footer';
+import NotFound from '../Components/NotFound/NotFound';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -25,6 +26,7 @@ function App(): JSX.Element {
     <div className="w-full">
       <NavBar />
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route path="/cases" element={<PostPage />} />
         <Route index element={<MainPage />} />
         <Route path="/adminPage" element={<AdminPage />} />
