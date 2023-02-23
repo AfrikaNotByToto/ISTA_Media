@@ -13,14 +13,16 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const { img, title, description, url } = req.body;
-    const News = await New.create({
-      img,
-      title,
-      description,
-      url,
-      userId: req.session.userId,
-    });
-    res.json(News);
+    if (img !== '' && title !== '' && description !== '' && url !== '') {
+      const News = await New.create({
+        img,
+        title,
+        description,
+        url,
+        userId: req.session.userId,
+      });
+      res.json(News);
+    }
   } catch (message) {
     res.status(500).json({ message: 'Crushed' });
   }
@@ -29,8 +31,11 @@ router.post('/', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const result = await New.destroy({ where: { id } });
-    res.json(Number(id));
+    const idor = await New.findOne({ where: { userId: req.session.userId } });
+    if (req.session.userId === 1 || req.session.userId === idor.userId) {
+      const result = await New.destroy({ where: { id } });
+      res.json(Number(id));
+    }
   } catch (message) {
     res.status(500).json({ message: 'Crushed' });
   }
@@ -40,9 +45,14 @@ router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { img, title, description, url } = req.body;
-    await New.update({ img, title, description, url }, { where: { id } });
-    const data = await New.findOne({ where: { id } });
-    res.json(data);
+    if (img !== '' && title !== '' && description !== '' && url !== '') {
+      const idor = await New.findOne({ where: { userId: req.session.userId } });
+      if (req.session.userId === 1 || req.session.userId === idor.userId) {
+        await New.update({ img, title, description, url }, { where: { id } });
+        const data = await New.findOne({ where: { id } });
+        res.json(data);
+      }
+    }
   } catch (message) {
     res.status(500).json({ message: 'Crushed' });
   }
