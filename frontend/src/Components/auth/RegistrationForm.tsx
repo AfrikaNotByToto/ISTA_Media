@@ -24,6 +24,7 @@ function Registration(): JSX.Element {
       messages === 'Вы успешно зарегистрировались, нажмите еще раз чтобы перейти'
     ) {
       nav('/adminPage');
+      window.location.reload();
     }
   };
 

@@ -20,6 +20,7 @@ const serverConfig = (app) => {
       },
     })
   );
+
   app.use(session(sessionConfig));
   app.disable('x-powered-by');
 };

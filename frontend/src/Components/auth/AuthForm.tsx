@@ -13,6 +13,7 @@ function Authorization(): JSX.Element {
   useLayoutEffect(() => {
     if ('userName' in user) {
       nav('/adminPage');
+      window.location.reload();
     }
   }, [nav, user]);
   const login = (e: React.FormEvent<HTMLFormElement>): void => {
