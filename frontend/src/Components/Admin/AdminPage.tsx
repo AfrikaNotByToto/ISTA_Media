@@ -6,7 +6,7 @@ import { RootState } from '../../store';
 import DescriptionCardList from './adminAboutUs/DescriptionList';
 import AddDescription from './adminAboutUs/AddDescription';
 import NewsList from './adminNews/NewsList';
-import AddNews from './adminNews/AddNews';
+import AddPostsNews from './adminNews/AddNews';
 
 export default function AdminPage(): JSX.Element {
   const { user } = useSelector((store: RootState) => store.users);
@@ -59,7 +59,7 @@ export default function AdminPage(): JSX.Element {
             marginRight: '1rem',
           }}
         >
-          {'userName' in user && <AddNews />}
+          {'userName' in user && <AddPostsNews />}
           <br />
           <br />
           <div>{'userName' in user && <NewsList />}</div>

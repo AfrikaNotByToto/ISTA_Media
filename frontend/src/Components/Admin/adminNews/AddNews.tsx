@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAppDispatch } from '../../../store';
 import { addNews } from '../../News/NewsSlice';
 
-export default function AddPostss(): JSX.Element {
+export default function AddPostsNews(): JSX.Element {
   const [img, setImg] = useState('');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -46,7 +46,7 @@ export default function AddPostss(): JSX.Element {
             id="title"
             name="title"
             value={title}
-            onChange={(e) => setTitle(String(e.target.value)))}
+            onChange={(e) => setTitle(String(e.target.value))}
             placeholder="Заголовок"
           />
         </div>
@@ -58,7 +58,7 @@ export default function AddPostss(): JSX.Element {
             id="url"
             name="url"
             value={url}
-            onChange={(e) => setUrl(String(e.target.value)))}
+            onChange={(e) => setUrl(String(e.target.value))}
             placeholder="Ссылка"
           />
         </div>
