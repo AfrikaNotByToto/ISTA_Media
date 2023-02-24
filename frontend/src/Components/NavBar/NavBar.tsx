@@ -42,10 +42,15 @@ export default function NavBar(): JSX.Element {
                   className="text-xl text-white hover:text-blue-800"
                   to="/registration"
                 >
-                  <div style={{ fontFamily: 'IBM Plex Sans' }}>Регистрация</div>
+                  <div style={{ fontFamily: 'IBM Plex Sans', marginLeft: '2rem' }}>
+                    Регистрация модератора
+                  </div>
                 </NavLink>
                 <NavLink className="text-xl text-white hover:text-blue-800" to="/">
-                  <div onClick={vixod} style={{ fontFamily: 'IBM Plex Sans' }}>
+                  <div
+                    onClick={vixod}
+                    style={{ fontFamily: 'IBM Plex Sans', marginLeft: '2rem' }}
+                  >
                     Выйти
                   </div>
                 </NavLink>
