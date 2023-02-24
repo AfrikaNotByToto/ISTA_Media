@@ -41,7 +41,7 @@ export default function AddPostss(): JSX.Element {
           <input
             className="placeholder w-96"
             style={{ color: 'black', backgroundColor: 'white' }}
-            maxLength={Number(20)}
+            // maxLength={Number(20)}
             type="text"
             id="title"
             name="title"
