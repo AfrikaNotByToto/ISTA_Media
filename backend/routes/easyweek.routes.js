@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
     ${req.body['service_name']} \n 
     ${req.body['booking_description']} \n 
     moderator: ${req.body['user_name']}`
-        const bot = new TelegramBot(token, {polling: true});
+        const bot = await new TelegramBot(token, {polling: true});
         await bot.sendMessage(746796578, text);
         await bot.stopPolling();
         res.status(200).json({message: 'good'})
